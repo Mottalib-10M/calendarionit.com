@@ -1,0 +1,22 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { SITE_URL, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { breadcrumbSchema } from '../../lib/seo';
+const lang = 'en';
+const code = `<iframe src="${SITE_URL}/embed/calendario-en/" title="Embed the NIT tax calendar" width="100%" height="1100" style="border:0;max-width:1100px" loading="lazy"></iframe>`;
+---
+<PageLayout title={`Embed the NIT tax calendar – ${SITE_NAMES[lang]}`} description="Copy the code and paste on your site the Colombian tax calendar by last NIT digit, with DIAN and ICA due dates. Free, updates itself and keeps a visible link back." lang={lang} noindex={true} jsonLd={[breadcrumbSchema([{ name: 'Home', path: route('home', lang) }, { name: 'Widget', path: route('widget', lang) }])]} breadcrumbs={[{ label: 'Widget' }]} showAuthor={false}>
+  <header class="mb-6">
+    <h1 class="text-3xl font-bold text-navy-900 md:text-4xl">Embed the NIT tax calendar</h1>
+    <p class="mt-3 text-lg text-navy-700">Copy the code and paste it on your page. It updates itself when a new calendar is published.</p>
+  </header>
+  <div class="prose prose-slate max-w-none">
+    <pre class="overflow-x-auto rounded-lg bg-navy-900 p-4 text-sm text-white"><code>{code}</code></pre>
+    <p>Terms: the link below the calculator stays visible, the calculator is not altered and comes without warranty. Spanish version: <code>{`${SITE_URL}/embed/calendario/`}</code>.</p>
+    <p><a href={route('contact', lang)}>Contact</a></p>
+  </div>
+  <div class="mt-8 overflow-hidden rounded-xl border border-navy-200">
+    <iframe src="/embed/calendario-en/" title="Embed the NIT tax calendar" width="100%" height="1100" style="border:0" loading="lazy"></iframe>
+  </div>
+</PageLayout>

@@ -1,0 +1,20 @@
+---
+/** Page pour iframe : le calendrier par NIT sans navigation. noindex, hors sitemap (astro.config). */
+import '../../styles/global.css';
+import CalendarioCalc from '../../components/calc/CalendarioCalc';
+import { SITE_URL } from '../../data/site-config';
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendario tributario por NIT – Vencimientos y Nómina CO</title>
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href={`${SITE_URL}/es/`} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class="bg-white p-2 text-navy-900">
+    <CalendarioCalc client:load lang="es" />
+    <p class="mt-2 text-center text-xs text-navy-600"><a href={`${SITE_URL}/es/`} target="_blank" rel="noopener" class="underline">Vencimientos y Nómina CO · calendario tributario por NIT</a></p>
+  </body>
+</html>

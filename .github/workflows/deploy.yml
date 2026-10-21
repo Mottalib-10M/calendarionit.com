@@ -1,0 +1,85 @@
+name: Calendario tributario y despliegue en GitHub Pages
+
+# La DIAN publica el calendario del año siguiente hacia fin de diciembre y lo corrige durante el año
+# (en 2026 : día cívico del 17 de abril, festivo del 13 de julio). Las alcaldías publican su
+# resolución de ICA en diciembre y la modifican a veces. Cada día (6:30 en Bogotá), el job
+# « vigilancia » revisa las fuentes oficiales; si algo cambió, falla (correo de GitHub) para que la
+# actualización se haga a mano, se pruebe y se publique.
+# El sitio se reconstruye en cada push y en cada pasada programada: la ventana « próximos 45 días »
+# del inicio y la fecha por defecto de los calculadores siguen así el día real. Horas en UTC (Colombia = UTC-5).
+on:
+  push:
+    branches: ['main']
+  workflow_dispatch:
+  schedule:
+    - cron: '30 11 * * *'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: false
+
+jobs:
+  vigilancia:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Fuentes oficiales (DIAN y secretarías de hacienda)
+        run: node scripts/update-data.mjs --strict
+      - name: Guardar el estado de la vigilancia
+        if: always()
+        run: |
+          git config user.name "calendario-vigilancia"
+          git config user.email "actions@users.noreply.github.com"
+          git add src/data/vigilancia.cache.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Vigilancia de fuentes oficiales ($(TZ=America/Bogota date +%F))"
+            git push
+          fi
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+      - name: Tests del motor y de los textos (cada fecha en día hábil)
+        run: npx vitest run
+      - name: Build (con control de los snippets)
+        run: npm run build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Checkout (script IndexNow)
+        if: github.event_name != 'schedule'
+        uses: actions/checkout@v4
+      - name: Ping IndexNow
+        if: github.event_name != 'schedule'
+        continue-on-error: true
+        run: bash scripts/indexnow.sh https://co-calendario-nomina.example

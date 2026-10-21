@@ -1,0 +1,99 @@
+---
+/**
+ * Accueil d'une langue (page pilier, RECETTE §5). Trame propre au sujet : le calendrier par NIT en tête,
+ * puis la fenêtre des 45 prochains jours (toutes les obligations nationales, par chiffre), les chiffres
+ * de l'année (UVT, salaire minimum, auxilio, jours fériés), les villes ICA couvertes, le texte et l'index.
+ * Textes : content/<langue>/_home.ts.
+ */
+import PageLayout from '../layouts/PageLayout.astro';
+import CalendarioCalc from './calc/CalendarioCalc';
+import Clamp from './Clamp.astro';
+import { homeText } from '../lib/guides';
+import { route, type Locale } from '../i18n/routes';
+import { navCategories } from '../i18n/nav';
+import { helpers } from '../lib/helpers';
+import { P, type SourceKey } from '../lib/engine/params';
+import { CALENDARIO, CIUDADES } from '../lib/engine/calendario';
+import { festivos, addDays } from '../lib/engine/fechas';
+import { obligacion, accion, periodo } from '../lib/etiquetas';
+import { faqSchema, organizationSchema, websiteSchema, webPageSchema, webApplicationSchema } from '../lib/seo';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const x = homeText(lang);
+const H = helpers(lang);
+const path = route('home', lang);
+const resume = x.resume(H);
+const faqs = x.faqs(H);
+const keys: SourceKey[] = ['dianCal', 'dec2229', 'exogena227', 'uvt2026', 'dec1469', 'dec1470', 'ley2578', 'icaBogota', 'icaMedellin', 'icaCali'];
+const sources = keys.map((k) => ({ name: P.sources[k].label[lang], url: P.sources[k].url }));
+const jsonLd = [websiteSchema(lang), organizationSchema(lang), webPageSchema({ name: x.h1, description: x.description, path, lang }), webApplicationSchema({ name: x.h1, description: x.description, path, lang }), faqSchema(faqs, lang)];
+const T = <A,>(es: A, en: A) => (lang === 'en' ? en : es);
+const groups = navCategories(lang);
+declare const __BUILD_DAY__: string;
+const hoy = __BUILD_DAY__;
+const fin = addDays(hoy, 45);
+// Fenêtre : pour chaque ligne nationale, première et dernière date dans les 45 jours.
+type Fila = { periodo: string; accion: string; fechas: Record<string, string> };
+const ventana = Object.entries(CALENDARIO.obligaciones as Record<string, Fila[]>).flatMap(([id, filas]) => filas.map((f) => {
+  const fs = Object.values(f.fechas).filter((d) => d >= hoy && d <= fin).sort();
+  return fs.length ? { id, f, desde: fs[0], hasta: fs[fs.length - 1], n: fs.length, total: Object.keys(f.fechas).length } : null;
+}).filter((v): v is NonNullable<typeof v> => v !== null)).sort((a, b) => a.desde.localeCompare(b.desde));
+const label = (id: string) => obligacion(id === 'exogena_gc' ? 'exogena' : id, lang) + (id === 'exogena_gc' ? T(' (grandes contribuyentes)', ' (large taxpayers)') : '');
+const fes = festivos(Number(hoy.slice(0, 4)));
+const proxFes = fes.find((f) => f.fecha >= hoy);
+const cifras = [
+  { t: 'UVT 2026', v: H.cop(P.uvt['2026']), n: P.uvt.acto2026, href: route('topes', lang) },
+  { t: T('Salario mínimo 2026', '2026 minimum wage'), v: H.cop(P.nomina.smmlv), n: P.nomina.smmlv_acto, href: route('salario-minimo', lang) },
+  { t: T('Auxilio de transporte', 'Transport allowance'), v: H.cop(P.nomina.auxilio), n: P.nomina.auxilio_acto, href: route('salario-minimo', lang) },
+  { t: T(`Festivos ${hoy.slice(0, 4)}`, `${hoy.slice(0, 4)} holidays`), v: String(fes.length), n: proxFes ? T(`próximo: ${H.date(proxFes.fecha)}`, `next: ${H.date(proxFes.fecha)}`) : '', href: route('festivos', lang) },
+];
+---
+<PageLayout title={x.title} description={x.description} lang={lang} jsonLd={jsonLd} faqs={faqs} sources={sources}>
+  <header class="mb-3">
+    <h1 class="text-3xl font-bold text-navy-900 md:text-4xl">{x.h1}</h1>
+    <p class="mt-2 text-lg text-navy-700">{x.intro}</p>
+  </header>
+  <Clamp text={resume} lang={lang} id="clamp-home" sentences={1} class="mb-4" />
+  <div data-outil>
+    <CalendarioCalc client:load lang={lang} methodHref={route('method', lang)} />
+  </div>
+  <section class="mt-10" aria-labelledby="ventana">
+    <h2 id="ventana" class="mb-1 text-2xl font-bold text-navy-900">{T('Lo que vence en los próximos 45 días', 'Due in the next 45 days')}</h2>
+    <p class="mb-3 text-sm text-navy-600">{T(`Obligaciones nacionales entre el ${H.date(hoy)} y el ${H.date(fin)}, todas las terminaciones de NIT. Escriba su NIT arriba para ver solo las suyas.`, `National obligations between ${H.date(hoy)} and ${H.date(fin)}, every NIT ending. Type your NIT above to see only yours.`)}</p>
+    {ventana.length ? (
+      <Fragment set:html={H.table(
+        [T('Obligación', 'Obligation'), T('Período', 'Period'), T('Desde', 'From'), T('Hasta', 'Until'), T('Terminaciones', 'Endings')],
+        ventana.map((v) => [`${label(v.id)}: ${accion(v.f.accion, lang)}`, periodo(v.f.periodo, lang), H.date(v.desde), H.date(v.hasta), `${v.n} / ${v.total}`]),
+        T('Calendario DIAN 2026 (Decreto 2229 de 2023); fechas calculadas el día de la publicación de esta página', 'DIAN 2026 calendar (Decree 2229 of 2023); window computed on the day this page was published'), ['l', 'l', 'l', 'l', 'r'])} />
+    ) : (
+      <p class="text-navy-800">{T('Ninguna fecha nacional publicada en esta ventana. El calendario 2027 de la DIAN está por publicarse.', 'No published national date in this window. The 2027 DIAN calendar is yet to be published.')}</p>
+    )}
+  </section>
+  <section class="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4" data-chrome aria-label={T('Cifras del año', 'Key figures for the year')}>
+    {cifras.map((c) => (
+      <a href={c.href} class="block border-t-4 border-accent-600 bg-navy-50 px-4 py-3 hover:bg-accent-50">
+        <span class="block text-xs font-semibold uppercase tracking-wide text-navy-600">{c.t}</span>
+        <span class="tabular-nums block text-2xl font-bold text-navy-900">{c.v}</span>
+        <span class="block text-xs text-navy-600">{c.n}</span>
+      </a>
+    ))}
+  </section>
+  <section class="mt-8" aria-labelledby="ciudades">
+    <h2 id="ciudades" class="mb-3 text-2xl font-bold text-navy-900">{T('ICA: ciudades con su resolución 2026', 'ICA: cities with their 2026 resolution')}</h2>
+    <ul class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+      {CIUDADES.map((c) => (
+        <li class="rounded-lg border border-navy-200 px-4 py-3"><a href={route(`ica-${c.id}`, lang)} class="font-semibold text-accent-700 hover:underline">{c.nombre[lang]}</a><span class="block text-sm text-navy-600">{c.acto.split(',')[0].split(' modificada')[0].split(' (vigencia')[0]}</span></li>
+      ))}
+    </ul>
+  </section>
+  <div class="prose prose-slate mt-8 max-w-none">
+    <Fragment set:html={x.body(H)} />
+  </div>
+  <section class="mt-12" data-chrome>
+    <h2 class="mb-4 text-2xl font-bold text-navy-900">{T('Todas las páginas', 'Every page')}</h2>
+    <div class="grid gap-6 sm:grid-cols-3">
+      {groups.map((g) => (<div><h3 class="mb-2 font-semibold text-navy-900">{g.label}</h3><ul class="space-y-1 text-sm">{g.links.filter((k) => k.href !== path).map((k) => <li><a href={k.href} class="text-accent-700 hover:underline">{k.label}</a></li>)}</ul></div>))}
+    </div>
+    <p class="mt-6 text-sm text-navy-700"><a href={route('method', lang)} class="underline">{T('Método y fuentes', 'Method and sources')}</a> · <a href={route('about', lang)} class="underline">{T('Quiénes somos', 'About')}</a></p>
+  </section>
+</PageLayout>

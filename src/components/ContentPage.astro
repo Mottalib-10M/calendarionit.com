@@ -1,0 +1,63 @@
+---
+/**
+ * Rendu d'une page outil définie dans `src/content/` (RECETTE §9.3, §21) : H1 et chapeau, bloc citable
+ * replié, calculateur complet, puis le corps. FAQ, pages liées, sources et signature viennent du PageLayout.
+ */
+import PageLayout from '../layouts/PageLayout.astro';
+import Clamp from './Clamp.astro';
+import CalendarioCalc from './calc/CalendarioCalc';
+import FestivosCalc from './calc/FestivosCalc';
+import RetencionCalc from './calc/RetencionCalc';
+import TopesCalc from './calc/TopesCalc';
+import LiquidacionCalc from './calc/LiquidacionCalc';
+import PrestacionCalc from './calc/PrestacionCalc';
+import RecargosCalc from './calc/RecargosCalc';
+import MinimoCalc from './calc/MinimoCalc';
+import { route, ROUTES, type Locale } from '../i18n/routes';
+import { label } from '../i18n/nav';
+import { t } from '../i18n/ui';
+import { pageById } from '../lib/guides';
+import { helpers } from '../lib/helpers';
+import { P } from '../lib/engine/params';
+import { articleSchema, faqSchema, breadcrumbSchema, webPageSchema, webApplicationSchema } from '../lib/seo';
+import { AUTHOR_NAME } from '../data/site-config';
+import type { PageDef } from '../lib/guide-types';
+interface Props { page: PageDef; lang: Locale }
+const { page, lang } = Astro.props;
+const x = page[lang];
+const ui = t(lang);
+const path = route(page.id, lang);
+const H = helpers(lang);
+const resume = x.resume(H);
+const faqs = x.faqs(H);
+const jsonLd = [articleSchema({ title: x.h1, description: x.description, path, lang }), webPageSchema({ name: x.h1, description: x.description, path, lang }), breadcrumbSchema([{ name: ui.breadcrumbHome, path: route('home', lang) }, { name: x.nav, path }]), webApplicationSchema({ name: x.h1, description: x.description, path, lang })];
+if (faqs.length) jsonLd.push(faqSchema(faqs, lang));
+const related = page.related.filter((id) => ROUTES.some((r) => r.id === id)).map((id) => ({ href: route(id, lang), name: label(id, lang), description: pageById(id)?.[lang].card ?? '' }));
+const sources = page.sources.map((k) => ({ name: P.sources[k].label[lang], url: P.sources[k].url }));
+const methodHref = route('method', lang);
+const tp = (page.toolProps ?? {}) as Record<string, string | number | boolean>;
+const tool = page.tool;
+---
+<PageLayout title={x.title} description={x.description} lang={lang} jsonLd={jsonLd} faqs={faqs} related={related} sources={sources} breadcrumbs={[{ label: x.nav }]}>
+  <article>
+    <header class="mb-3">
+      <h1 class="text-2xl font-bold text-navy-900 md:text-3xl">{x.h1}</h1>
+      <p class="mt-1 text-base text-navy-700 md:text-lg">{x.intro}</p>
+    </header>
+    <Clamp text={resume} lang={lang} id={`clamp-${page.id}`} class="mb-3" />
+    <div data-outil>
+      {tool === 'calendario' && <CalendarioCalc client:load lang={lang} methodHref={methodHref} {...tp} />}
+      {tool === 'festivos' && <FestivosCalc client:load lang={lang} methodHref={methodHref} />}
+      {tool === 'retencion' && <RetencionCalc client:load lang={lang} methodHref={methodHref} />}
+      {tool === 'topes' && <TopesCalc client:load lang={lang} methodHref={methodHref} />}
+      {tool === 'liquidacion' && <LiquidacionCalc client:load lang={lang} methodHref={methodHref} />}
+      {(tool === 'cesantias' || tool === 'prima' || tool === 'vacaciones') && <PrestacionCalc client:load lang={lang} methodHref={methodHref} tipo={tool} />}
+      {tool === 'recargos' && <RecargosCalc client:load lang={lang} methodHref={methodHref} />}
+      {tool === 'minimo' && <MinimoCalc client:load lang={lang} methodHref={methodHref} />}
+    </div>
+    <p class="mt-2 text-sm text-navy-600" data-chrome>{ui.reviewedBy} <a href={route('about', lang)} class="underline hover:text-navy-900">{AUTHOR_NAME}</a> · <a href={route('editorial', lang)} class="underline hover:text-navy-900">{ui.editorialPolicy}</a> · <a href={methodHref} class="underline hover:text-navy-900">{label('method', lang)}</a></p>
+    <div class="prose prose-slate max-w-none">
+      <Fragment set:html={x.body(H)} />
+    </div>
+  </article>
+</PageLayout>

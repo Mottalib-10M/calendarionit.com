@@ -1,0 +1,16 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { CONTACT_EMAIL, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { P } from '../../lib/engine/params';
+const lang = 'en';
+---
+<PageLayout title={`Editorial policy – ${SITE_NAMES[lang]}`} description="How Colombia Tax Dates & Payroll checks every date and figure: official texts only, the decree or resolution number, and anything unpublished shown as yet to come." lang={lang} noindex={true} breadcrumbs={[{ label: 'Editorial policy' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Editorial policy</h1>
+    <h2>Sources</h2><p>Primary sources only: the DIAN tax calendar and Decree 2229 of 2023, DIAN resolutions in its legal database, each city treasury's calendar resolution, Ministry of Labour decrees and the text of the Labour Code and Tax Code at the Colombian Senate. Accounting software vendors, blogs and newspapers are never a source. Every value sits in a data file with its legal act and the date it was read ({P.retrieved_at}).</p>
+    <h2>What we do not publish</h2><p>No date that is not in a published rule: the 2027 national calendar and the 2027 minimum wage are shown as yet to be published until they come out. A city whose resolution cannot be read from an official source is left out. We do not recommend accountants, software or products, take no payment for mentions and collect no contact details.</p>
+    <h2>Checks</h2><p>Every national date is checked against the DIAN PDF and tested to fall on a business day; the calculation engine runs automated tests on every release. Values are reviewed each December and whenever a rule that changes them is published.</p>
+    <h2>Corrections</h2><p>Errors are fixed as soon as they are confirmed. Write to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. See also <a href={route('method', lang)}>method and sources</a> and <a href={route('about', lang)}>about</a>.</p>
+  </div>
+</PageLayout>

@@ -1,0 +1,1287 @@
+{
+ "_lisezmoi": "Calendarios ICA y ReteICA 2026 de las ciudades publicadas. Cada fecha se copia de la resolución citada (acto), leída en la fuente oficial el día retrieved_at. Clave 'todos' = fecha única; '1-2' = últimos dígitos del NIT 1 y 2 (sin dígito de verificación). Una ciudad sin acto verificado no entra.",
+ "retrieved_at": "2026-10-21",
+ "ciudades": [
+  {
+   "id": "bogota",
+   "nombre": {
+    "es": "Bogotá",
+    "en": "Bogotá"
+   },
+   "autoridad": {
+    "es": "Secretaría Distrital de Hacienda de Bogotá",
+    "en": "Bogotá District Treasury (Secretaría Distrital de Hacienda)"
+   },
+   "acto": "Resolución SDH-000195 del 12 de diciembre de 2025",
+   "url": "https://www.haciendabogota.gov.co/es/normatividad/resolucion-sdh-000195-del-12-de-diciembre-de-2025",
+   "url_calendario": "https://back.haciendabogota.gov.co/sites/default/files/basic/07282026-Calendario-2026-V1-4.pdf",
+   "por_nit": false,
+   "regimenes": [
+    {
+     "id": "bimestral",
+     "nombre": {
+      "es": "Régimen común bimestral",
+      "en": "Ordinary regime, two-month returns"
+     },
+     "quien": {
+      "es": "Impuesto a cargo del año gravable 2025 superior a 391 UVT ($19.471.409)",
+      "en": "ICA due for tax year 2025 above 391 UVT (COP 19,471,409)"
+     },
+     "filas": [
+      {
+       "periodo": "2026-B1",
+       "accion": "decl_pago",
+       "fechas": {
+        "todos": "2026-04-10"
+       }
+      },
+      {
+       "periodo": "2026-B2",
+       "accion": "decl_pago",
+       "fechas": {
+        "todos": "2026-06-12"
+       }
+      },
+      {
+       "periodo": "2026-B3",
+       "accion": "decl_pago",
+       "fechas": {
+        "todos": "2026-08-21"
+       }
+      },
+      {
+       "periodo": "2026-B4",
+       "accion": "decl_pago",
+       "fechas": {
+        "todos": "2026-10-09"
+       }
+      },
+      {
+       "periodo": "2026-B5",
+       "accion": "decl_pago",
+       "fechas": {
+        "todos": "2026-12-11"
+       }
+      },
+      {
+       "periodo": "2026-B6",
+       "accion": "decl_pago",
+       "fechas": {
+        "todos": "2027-02-12"
+       }
+      }
+     ]
+    },
+    {
+     "id": "anual",
+     "nombre": {
+      "es": "Régimen común anual",
+      "en": "Ordinary regime, annual return"
+     },
+     "quien": {
+      "es": "Impuesto a cargo del año gravable 2025 de 391 UVT o menos",
+      "en": "ICA due for tax year 2025 of 391 UVT or less"
+     },
+     "filas": [
+      {
+       "periodo": "AG2026",
+       "accion": "decl_pago",
+       "fechas": {
+        "todos": "2027-02-26"
+       }
+      }
+     ]
+    },
+    {
+     "id": "preferencial",
+     "nombre": {
+      "es": "Régimen preferencial",
+      "en": "Preferential regime"
+     },
+     "quien": {
+      "es": "Pequeños contribuyentes del régimen preferencial",
+      "en": "Small taxpayers in the preferential regime"
+     },
+     "filas": [
+      {
+       "periodo": "AG2026",
+       "accion": "decl_pago",
+       "fechas": {
+        "todos": "2027-02-26"
+       }
+      }
+     ]
+    }
+   ],
+   "retencion": {
+    "nombre": {
+     "es": "ReteICA bimestral",
+     "en": "ICA withholding, two-month returns"
+    },
+    "filas": [
+     {
+      "periodo": "2026-B1",
+      "accion": "decl_pago",
+      "fechas": {
+       "todos": "2026-03-20"
+      }
+     },
+     {
+      "periodo": "2026-B2",
+      "accion": "decl_pago",
+      "fechas": {
+       "todos": "2026-05-22"
+      }
+     },
+     {
+      "periodo": "2026-B3",
+      "accion": "decl_pago",
+      "fechas": {
+       "todos": "2026-07-17"
+      }
+     },
+     {
+      "periodo": "2026-B4",
+      "accion": "decl_pago",
+      "fechas": {
+       "todos": "2026-09-18"
+      }
+     },
+     {
+      "periodo": "2026-B5",
+      "accion": "decl_pago",
+      "fechas": {
+       "todos": "2026-11-20"
+      }
+     },
+     {
+      "periodo": "2026-B6",
+      "accion": "decl_pago",
+      "fechas": {
+       "todos": "2027-01-15"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "medellin",
+   "nombre": {
+    "es": "Medellín",
+    "en": "Medellín"
+   },
+   "autoridad": {
+    "es": "Secretaría de Hacienda de Medellín, Subsecretaría de Ingresos",
+    "en": "Medellín Treasury (Subsecretaría de Ingresos)"
+   },
+   "acto": "Resolución 202550100057 del 9 de diciembre de 2025",
+   "url": "https://www.medellin.gov.co/es/wp-content/uploads/2025/12/RESOLUCION-202550100057-DE-2025-CALENDARIO-TRIBUTARIO-2026.pdf",
+   "por_nit": true,
+   "regimenes": [
+    {
+     "id": "ordinario",
+     "nombre": {
+      "es": "Régimen ordinario",
+      "en": "Ordinary regime"
+     },
+     "quien": {
+      "es": "Todo contribuyente de ICA que no está en el régimen simplificado",
+      "en": "Every ICA taxpayer outside the simplified regime"
+     },
+     "filas": [
+      {
+       "periodo": "AG2025",
+       "accion": "decl",
+       "fechas": {
+        "0": "2026-04-17",
+        "9": "2026-04-20",
+        "8": "2026-04-21",
+        "7": "2026-04-22",
+        "6": "2026-04-23",
+        "5": "2026-04-24",
+        "4": "2026-04-27",
+        "3": "2026-04-28",
+        "2": "2026-04-29",
+        "1": "2026-04-30"
+       }
+      },
+      {
+       "periodo": "AG2025",
+       "accion": "pago",
+       "fechas": {
+        "todos": "2026-06-25"
+       }
+      }
+     ]
+    },
+    {
+     "id": "simplificado",
+     "nombre": {
+      "es": "Régimen simplificado",
+      "en": "Simplified regime"
+     },
+     "quien": {
+      "es": "Persona natural con un solo establecimiento e ingresos de hasta 2.500 UVT (Acuerdo 093 de 2023, art. 62); no declara, paga el documento de cobro",
+      "en": "Individual with one establishment and income up to 2,500 UVT (Agreement 093 of 2023, art. 62); no return, pays the billing statement"
+     },
+     "filas": [
+      {
+       "periodo": "2026-P1",
+       "accion": "cobro",
+       "fechas": {
+        "todos": "2026-02-25"
+       }
+      },
+      {
+       "periodo": "2026-P2",
+       "accion": "cobro",
+       "fechas": {
+        "todos": "2026-04-28"
+       }
+      },
+      {
+       "periodo": "2026-P3",
+       "accion": "cobro",
+       "fechas": {
+        "todos": "2026-06-25"
+       }
+      },
+      {
+       "periodo": "2026-P4",
+       "accion": "cobro",
+       "fechas": {
+        "todos": "2026-08-27"
+       }
+      },
+      {
+       "periodo": "2026-P5",
+       "accion": "cobro",
+       "fechas": {
+        "todos": "2026-10-28"
+       }
+      },
+      {
+       "periodo": "2026-P6",
+       "accion": "cobro",
+       "fechas": {
+        "todos": "2026-12-28"
+       }
+      }
+     ]
+    }
+   ],
+   "retencion": {
+    "nombre": {
+     "es": "ReteICA bimestral",
+     "en": "ICA withholding, two-month returns"
+    },
+    "filas": [
+     {
+      "periodo": "2026-B1",
+      "accion": "decl_pago",
+      "fechas": {
+       "todos": "2026-03-18"
+      }
+     },
+     {
+      "periodo": "2026-B2",
+      "accion": "decl_pago",
+      "fechas": {
+       "todos": "2026-05-20"
+      }
+     },
+     {
+      "periodo": "2026-B3",
+      "accion": "decl_pago",
+      "fechas": {
+       "todos": "2026-07-22"
+      }
+     },
+     {
+      "periodo": "2026-B4",
+      "accion": "decl_pago",
+      "fechas": {
+       "todos": "2026-09-23"
+      }
+     },
+     {
+      "periodo": "2026-B5",
+      "accion": "decl_pago",
+      "fechas": {
+       "todos": "2026-11-18"
+      }
+     },
+     {
+      "periodo": "2026-B6",
+      "accion": "decl_pago",
+      "fechas": {
+       "todos": "2027-01-20"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "cali",
+   "nombre": {
+    "es": "Cali",
+    "en": "Cali"
+   },
+   "autoridad": {
+    "es": "Departamento Administrativo de Hacienda de Santiago de Cali",
+    "en": "Cali Treasury Department (Departamento Administrativo de Hacienda)"
+   },
+   "acto": "Resolución 4131.010.21.0607 del 22 de diciembre de 2025, modificada por las Resoluciones 4131.010.21.1.0692 del 9 de julio de 2026 y 4131.010.21.1.0785 de 2026",
+   "url": "https://www.cali.gov.co/hacienda/publicaciones/50130/calendario-tributario/",
+   "por_nit": true,
+   "regimenes": [
+    {
+     "id": "bimestral",
+     "nombre": {
+      "es": "Grandes contribuyentes distritales (bimestral)",
+      "en": "Large district taxpayers (two-month)"
+     },
+     "quien": {
+      "es": "Contribuyentes catalogados como grandes contribuyentes de los impuestos distritales (Acuerdo 0541 de 2022)",
+      "en": "Taxpayers classified as large district taxpayers (Agreement 0541 of 2022)"
+     },
+     "filas": [
+      {
+       "periodo": "2026-B1",
+       "accion": "decl_pago",
+       "fechas": {
+        "1-2": "2026-03-09",
+        "3-4": "2026-03-10",
+        "5-6": "2026-03-11",
+        "7-8": "2026-03-12",
+        "9-0": "2026-03-13"
+       }
+      },
+      {
+       "periodo": "2026-B2",
+       "accion": "decl_pago",
+       "fechas": {
+        "1-2": "2026-05-11",
+        "3-4": "2026-05-12",
+        "5-6": "2026-05-13",
+        "7-8": "2026-05-14",
+        "9-0": "2026-05-15"
+       }
+      },
+      {
+       "periodo": "2026-B3",
+       "accion": "decl_pago",
+       "fechas": {
+        "1-2": "2026-07-27",
+        "3-4": "2026-07-28",
+        "5-6": "2026-07-29",
+        "7-8": "2026-07-30",
+        "9-0": "2026-07-31"
+       }
+      },
+      {
+       "periodo": "2026-B4",
+       "accion": "decl_pago",
+       "fechas": {
+        "1-2": "2026-10-05",
+        "3-4": "2026-10-06",
+        "5-6": "2026-10-07",
+        "7-8": "2026-10-08",
+        "9-0": "2026-10-09"
+       }
+      },
+      {
+       "periodo": "2026-B5",
+       "accion": "decl_pago",
+       "fechas": {
+        "1-2": "2026-11-09",
+        "3-4": "2026-11-10",
+        "5-6": "2026-11-11",
+        "7-8": "2026-11-12",
+        "9-0": "2026-11-13"
+       }
+      },
+      {
+       "periodo": "2026-B6",
+       "accion": "decl_pago",
+       "fechas": {
+        "1-2": "2027-01-18",
+        "3-4": "2027-01-19",
+        "5-6": "2027-01-20",
+        "7-8": "2027-01-21",
+        "9-0": "2027-01-22"
+       }
+      }
+     ]
+    },
+    {
+     "id": "anual_alto",
+     "nombre": {
+      "es": "Anual, ingresos de 131.952 UVT o más",
+      "en": "Annual, income of 131,952 UVT or more"
+     },
+     "quien": {
+      "es": "Ingresos netos 2025 en Cali de al menos 131.952 UVT",
+      "en": "2025 net income in Cali of at least 131,952 UVT"
+     },
+     "filas": [
+      {
+       "periodo": "AG2025",
+       "accion": "decl_pago",
+       "fechas": {
+        "1-2": "2026-03-02",
+        "3-4": "2026-03-03",
+        "5-6": "2026-03-04",
+        "7-8": "2026-03-05",
+        "9-0": "2026-03-06"
+       }
+      }
+     ]
+    },
+    {
+     "id": "anual_medio",
+     "nombre": {
+      "es": "Anual, ingresos de 32.998 a 131.952 UVT",
+      "en": "Annual, income of 32,998 to 131,952 UVT"
+     },
+     "quien": {
+      "es": "Ingresos netos 2025 en Cali de al menos 32.998 UVT y menos de 131.952 UVT",
+      "en": "2025 net income in Cali from 32,998 UVT up to 131,952 UVT"
+     },
+     "filas": [
+      {
+       "periodo": "AG2025",
+       "accion": "decl_pago",
+       "fechas": {
+        "1-2": "2026-04-06",
+        "3-4": "2026-04-07",
+        "5-6": "2026-04-08",
+        "7-8": "2026-04-09",
+        "9-0": "2026-04-10"
+       }
+      }
+     ]
+    },
+    {
+     "id": "anual_bajo",
+     "nombre": {
+      "es": "Anual, ingresos de menos de 32.998 UVT",
+      "en": "Annual, income below 32,998 UVT"
+     },
+     "quien": {
+      "es": "Ingresos netos 2025 en Cali inferiores a 32.998 UVT",
+      "en": "2025 net income in Cali below 32,998 UVT"
+     },
+     "filas": [
+      {
+       "periodo": "AG2025",
+       "accion": "decl_pago",
+       "fechas": {
+        "1": "2026-05-04",
+        "2": "2026-05-06",
+        "3": "2026-05-08",
+        "4": "2026-05-11",
+        "5": "2026-05-13",
+        "6": "2026-05-15",
+        "7": "2026-05-20",
+        "8": "2026-05-22",
+        "9": "2026-05-26",
+        "0": "2026-05-28"
+       }
+      }
+     ]
+    }
+   ],
+   "retencion": {
+    "nombre": {
+     "es": "ReteICA bimestral",
+     "en": "ICA withholding, two-month returns"
+    },
+    "filas": [
+     {
+      "periodo": "2026-B1",
+      "accion": "decl_pago",
+      "fechas": {
+       "1-2": "2026-03-09",
+       "3-4": "2026-03-10",
+       "5-6": "2026-03-11",
+       "7-8": "2026-03-12",
+       "9-0": "2026-03-13"
+      }
+     },
+     {
+      "periodo": "2026-B2",
+      "accion": "decl_pago",
+      "fechas": {
+       "1-2": "2026-05-11",
+       "3-4": "2026-05-12",
+       "5-6": "2026-05-13",
+       "7-8": "2026-05-14",
+       "9-0": "2026-05-15"
+      }
+     },
+     {
+      "periodo": "2026-B3",
+      "accion": "decl_pago",
+      "fechas": {
+       "1-2": "2026-07-27",
+       "3-4": "2026-07-28",
+       "5-6": "2026-07-29",
+       "7-8": "2026-07-30",
+       "9-0": "2026-07-31"
+      }
+     },
+     {
+      "periodo": "2026-B4",
+      "accion": "decl_pago",
+      "fechas": {
+       "1-2": "2026-10-05",
+       "3-4": "2026-10-06",
+       "5-6": "2026-10-07",
+       "7-8": "2026-10-08",
+       "9-0": "2026-10-09"
+      }
+     },
+     {
+      "periodo": "2026-B5",
+      "accion": "decl_pago",
+      "fechas": {
+       "1-2": "2026-11-09",
+       "3-4": "2026-11-10",
+       "5-6": "2026-11-11",
+       "7-8": "2026-11-12",
+       "9-0": "2026-11-13"
+      }
+     },
+     {
+      "periodo": "2026-B6",
+      "accion": "decl_pago",
+      "fechas": {
+       "1-2": "2027-01-18",
+       "3-4": "2027-01-19",
+       "5-6": "2027-01-20",
+       "7-8": "2027-01-21",
+       "9-0": "2027-01-22"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "barranquilla",
+   "nombre": {
+    "es": "Barranquilla",
+    "en": "Barranquilla"
+   },
+   "autoridad": {
+    "es": "Secretaría Distrital de Hacienda de Barranquilla",
+    "en": "Barranquilla District Treasury (Secretaría Distrital de Hacienda)"
+   },
+   "acto": "Resolución DSH 003 del 26 de diciembre de 2025 (vigencia 2026) y Resolución DSH 001 del 18 de diciembre de 2024 (declaración anual del año gravable 2025)",
+   "url": "https://barranquilla.gov.co/hacienda/calendario-tributario",
+   "url_calendario": "https://web.archive.org/web/20261006152507/https://barranquilla.gov.co/hacienda/calendario-tributario",
+   "por_nit": true,
+   "regimenes": [
+    {
+     "id": "gran",
+     "nombre": {
+      "es": "Grandes contribuyentes",
+      "en": "Large taxpayers"
+     },
+     "quien": {
+      "es": "Declaración anual de ICA y declaración mensual de retenciones y autorretenciones",
+      "en": "Annual ICA return and monthly withholding and self-withholding returns"
+     },
+     "filas": [
+      {
+       "periodo": "AG2025",
+       "accion": "decl_pago",
+       "fechas": {
+        "0": "2026-02-10",
+        "9": "2026-02-11",
+        "8": "2026-02-12",
+        "7": "2026-02-13",
+        "6": "2026-02-20",
+        "5": "2026-02-23",
+        "4": "2026-02-24",
+        "3": "2026-02-25",
+        "2": "2026-02-26",
+        "1": "2026-02-27"
+       }
+      },
+      {
+       "periodo": "AG2026",
+       "accion": "decl_pago",
+       "fechas": {
+        "0": "2027-02-15",
+        "9": "2027-02-16",
+        "8": "2027-02-17",
+        "7": "2027-02-18",
+        "6": "2027-02-19",
+        "5": "2027-02-22",
+        "4": "2027-02-23",
+        "3": "2027-02-24",
+        "2": "2027-02-25",
+        "1": "2027-02-26"
+       }
+      },
+      {
+       "periodo": "2026-01",
+       "accion": "decl_pago",
+       "fechas": {
+        "0": "2026-02-11",
+        "9": "2026-02-12",
+        "8": "2026-02-13",
+        "7": "2026-02-19",
+        "6": "2026-02-20",
+        "5": "2026-02-23",
+        "4": "2026-02-24",
+        "3": "2026-02-25",
+        "2": "2026-02-26",
+        "1": "2026-02-27"
+       },
+       "ob": "autoreteica"
+      },
+      {
+       "periodo": "2026-02",
+       "accion": "decl_pago",
+       "fechas": {
+        "0": "2026-03-13",
+        "9": "2026-03-16",
+        "8": "2026-03-17",
+        "7": "2026-03-18",
+        "6": "2026-03-19",
+        "5": "2026-03-20",
+        "4": "2026-03-24",
+        "3": "2026-03-25",
+        "2": "2026-03-26",
+        "1": "2026-03-27"
+       },
+       "ob": "autoreteica"
+      },
+      {
+       "periodo": "2026-03",
+       "accion": "decl_pago",
+       "fechas": {
+        "0": "2026-04-17",
+        "9": "2026-04-20",
+        "8": "2026-04-21",
+        "7": "2026-04-22",
+        "6": "2026-04-23",
+        "5": "2026-04-24",
+        "4": "2026-04-27",
+        "3": "2026-04-28",
+        "2": "2026-04-29",
+        "1": "2026-04-30"
+       },
+       "ob": "autoreteica"
+      },
+      {
+       "periodo": "2026-04",
+       "accion": "decl_pago",
+       "fechas": {
+        "0": "2026-05-15",
+        "9": "2026-05-19",
+        "8": "2026-05-20",
+        "7": "2026-05-21",
+        "6": "2026-05-22",
+        "5": "2026-05-25",
+        "4": "2026-05-26",
+        "3": "2026-05-27",
+        "2": "2026-05-28",
+        "1": "2026-05-29"
+       },
+       "ob": "autoreteica"
+      },
+      {
+       "periodo": "2026-05",
+       "accion": "decl_pago",
+       "fechas": {
+        "0": "2026-06-16",
+        "9": "2026-06-17",
+        "8": "2026-06-18",
+        "7": "2026-06-19",
+        "6": "2026-06-22",
+        "5": "2026-06-23",
+        "4": "2026-06-24",
+        "3": "2026-06-25",
+        "2": "2026-06-26",
+        "1": "2026-06-30"
+       },
+       "ob": "autoreteica"
+      },
+      {
+       "periodo": "2026-06",
+       "accion": "decl_pago",
+       "fechas": {
+        "0": "2026-07-17",
+        "9": "2026-07-21",
+        "8": "2026-07-22",
+        "7": "2026-07-23",
+        "6": "2026-07-24",
+        "5": "2026-07-27",
+        "4": "2026-07-28",
+        "3": "2026-07-29",
+        "2": "2026-07-30",
+        "1": "2026-07-31"
+       },
+       "ob": "autoreteica"
+      },
+      {
+       "periodo": "2026-07",
+       "accion": "decl_pago",
+       "fechas": {
+        "0": "2026-08-18",
+        "9": "2026-08-19",
+        "8": "2026-08-20",
+        "7": "2026-08-21",
+        "6": "2026-08-24",
+        "5": "2026-08-25",
+        "4": "2026-08-26",
+        "3": "2026-08-27",
+        "2": "2026-08-28",
+        "1": "2026-08-31"
+       },
+       "ob": "autoreteica"
+      },
+      {
+       "periodo": "2026-08",
+       "accion": "decl_pago",
+       "fechas": {
+        "0": "2026-09-17",
+        "9": "2026-09-18",
+        "8": "2026-09-21",
+        "7": "2026-09-22",
+        "6": "2026-09-23",
+        "5": "2026-09-24",
+        "4": "2026-09-25",
+        "3": "2026-09-28",
+        "2": "2026-09-29",
+        "1": "2026-09-30"
+       },
+       "ob": "autoreteica"
+      },
+      {
+       "periodo": "2026-09",
+       "accion": "decl_pago",
+       "fechas": {
+        "0": "2026-10-19",
+        "9": "2026-10-20",
+        "8": "2026-10-21",
+        "7": "2026-10-22",
+        "6": "2026-10-23",
+        "5": "2026-10-26",
+        "4": "2026-10-27",
+        "3": "2026-10-28",
+        "2": "2026-10-29",
+        "1": "2026-10-30"
+       },
+       "ob": "autoreteica"
+      },
+      {
+       "periodo": "2026-10",
+       "accion": "decl_pago",
+       "fechas": {
+        "0": "2026-11-17",
+        "9": "2026-11-18",
+        "8": "2026-11-19",
+        "7": "2026-11-20",
+        "6": "2026-11-23",
+        "5": "2026-11-24",
+        "4": "2026-11-25",
+        "3": "2026-11-26",
+        "2": "2026-11-27",
+        "1": "2026-11-30"
+       },
+       "ob": "autoreteica"
+      },
+      {
+       "periodo": "2026-11",
+       "accion": "decl_pago",
+       "fechas": {
+        "0": "2026-12-14",
+        "9": "2026-12-15",
+        "8": "2026-12-16",
+        "7": "2026-12-17",
+        "6": "2026-12-18",
+        "5": "2026-12-21",
+        "4": "2026-12-22",
+        "3": "2026-12-23",
+        "2": "2026-12-28",
+        "1": "2026-12-29"
+       },
+       "ob": "autoreteica"
+      },
+      {
+       "periodo": "2026-12",
+       "accion": "decl_pago",
+       "fechas": {
+        "0": "2027-01-19",
+        "9": "2027-01-20",
+        "8": "2027-01-20",
+        "7": "2027-01-21",
+        "6": "2027-01-22",
+        "5": "2027-01-25",
+        "4": "2027-01-26",
+        "3": "2027-01-27",
+        "2": "2027-01-28",
+        "1": "2027-01-29"
+       },
+       "ob": "autoreteica"
+      }
+     ]
+    },
+    {
+     "id": "comun",
+     "nombre": {
+      "es": "Régimen común",
+      "en": "Ordinary regime"
+     },
+     "quien": {
+      "es": "Declaración anual de ICA y declaración bimestral de retenciones y autorretenciones",
+      "en": "Annual ICA return and two-month withholding and self-withholding returns"
+     },
+     "filas": [
+      {
+       "periodo": "AG2025",
+       "accion": "decl_pago",
+       "fechas": {
+        "0": "2026-02-10",
+        "9": "2026-02-11",
+        "8": "2026-02-12",
+        "7": "2026-02-13",
+        "6": "2026-02-20",
+        "5": "2026-02-23",
+        "4": "2026-02-24",
+        "3": "2026-02-25",
+        "2": "2026-02-26",
+        "1": "2026-02-27"
+       }
+      },
+      {
+       "periodo": "AG2026",
+       "accion": "decl_pago",
+       "fechas": {
+        "0": "2027-02-15",
+        "9": "2027-02-16",
+        "8": "2027-02-17",
+        "7": "2027-02-18",
+        "6": "2027-02-19",
+        "5": "2027-02-22",
+        "4": "2027-02-23",
+        "3": "2027-02-24",
+        "2": "2027-02-25",
+        "1": "2027-02-26"
+       }
+      },
+      {
+       "periodo": "2026-B1",
+       "accion": "decl_pago",
+       "fechas": {
+        "0": "2026-03-13",
+        "9": "2026-03-16",
+        "8": "2026-03-17",
+        "7": "2026-03-18",
+        "6": "2026-03-19",
+        "5": "2026-03-20",
+        "4": "2026-03-24",
+        "3": "2026-03-25",
+        "2": "2026-03-26",
+        "1": "2026-03-27"
+       },
+       "ob": "autoreteica"
+      },
+      {
+       "periodo": "2026-B2",
+       "accion": "decl_pago",
+       "fechas": {
+        "0": "2026-05-15",
+        "9": "2026-05-19",
+        "8": "2026-05-20",
+        "7": "2026-05-21",
+        "6": "2026-05-22",
+        "5": "2026-05-25",
+        "4": "2026-05-26",
+        "3": "2026-05-27",
+        "2": "2026-05-28",
+        "1": "2026-05-29"
+       },
+       "ob": "autoreteica"
+      },
+      {
+       "periodo": "2026-B3",
+       "accion": "decl_pago",
+       "fechas": {
+        "0": "2026-07-17",
+        "9": "2026-07-21",
+        "8": "2026-07-22",
+        "7": "2026-07-23",
+        "6": "2026-07-24",
+        "5": "2026-07-27",
+        "4": "2026-07-28",
+        "3": "2026-07-29",
+        "2": "2026-07-30",
+        "1": "2026-07-31"
+       },
+       "ob": "autoreteica"
+      },
+      {
+       "periodo": "2026-B4",
+       "accion": "decl_pago",
+       "fechas": {
+        "0": "2026-09-17",
+        "9": "2026-09-18",
+        "8": "2026-09-21",
+        "7": "2026-09-22",
+        "6": "2026-09-23",
+        "5": "2026-09-24",
+        "4": "2026-09-25",
+        "3": "2026-09-28",
+        "2": "2026-09-29",
+        "1": "2026-09-30"
+       },
+       "ob": "autoreteica"
+      },
+      {
+       "periodo": "2026-B5",
+       "accion": "decl_pago",
+       "fechas": {
+        "0": "2026-11-17",
+        "9": "2026-11-18",
+        "8": "2026-11-19",
+        "7": "2026-11-20",
+        "6": "2026-11-23",
+        "5": "2026-11-24",
+        "4": "2026-11-25",
+        "3": "2026-11-26",
+        "2": "2026-11-27",
+        "1": "2026-11-30"
+       },
+       "ob": "autoreteica"
+      },
+      {
+       "periodo": "2026-B6",
+       "accion": "decl_pago",
+       "fechas": {
+        "0": "2027-01-19",
+        "9": "2027-01-20",
+        "8": "2027-01-20",
+        "7": "2027-01-21",
+        "6": "2027-01-22",
+        "5": "2027-01-25",
+        "4": "2027-01-26",
+        "3": "2027-01-27",
+        "2": "2027-01-28",
+        "1": "2027-01-29"
+       },
+       "ob": "autoreteica"
+      }
+     ]
+    },
+    {
+     "id": "preferencial",
+     "nombre": {
+      "es": "Régimen simplificado preferencial",
+      "en": "Simplified preferential regime"
+     },
+     "quien": {
+      "es": "Declaración anual de ICA y pago bimestral de la autorretención",
+      "en": "Annual ICA return and two-month self-withholding payment"
+     },
+     "filas": [
+      {
+       "periodo": "AG2025",
+       "accion": "decl_pago",
+       "fechas": {
+        "0": "2026-02-10",
+        "9": "2026-02-11",
+        "8": "2026-02-12",
+        "7": "2026-02-13",
+        "6": "2026-02-20",
+        "5": "2026-02-23",
+        "4": "2026-02-24",
+        "3": "2026-02-25",
+        "2": "2026-02-26",
+        "1": "2026-02-27"
+       }
+      },
+      {
+       "periodo": "AG2026",
+       "accion": "decl_pago",
+       "fechas": {
+        "0": "2027-02-15",
+        "9": "2027-02-16",
+        "8": "2027-02-17",
+        "7": "2027-02-18",
+        "6": "2027-02-19",
+        "5": "2027-02-22",
+        "4": "2027-02-23",
+        "3": "2027-02-24",
+        "2": "2027-02-25",
+        "1": "2027-02-26"
+       }
+      },
+      {
+       "periodo": "2026-B1",
+       "accion": "pago",
+       "fechas": {
+        "todos": "2026-03-27"
+       },
+       "ob": "autoreteica"
+      },
+      {
+       "periodo": "2026-B2",
+       "accion": "pago",
+       "fechas": {
+        "todos": "2026-05-29"
+       },
+       "ob": "autoreteica"
+      },
+      {
+       "periodo": "2026-B3",
+       "accion": "pago",
+       "fechas": {
+        "todos": "2026-07-31"
+       },
+       "ob": "autoreteica"
+      },
+      {
+       "periodo": "2026-B4",
+       "accion": "pago",
+       "fechas": {
+        "todos": "2026-09-30"
+       },
+       "ob": "autoreteica"
+      },
+      {
+       "periodo": "2026-B5",
+       "accion": "pago",
+       "fechas": {
+        "todos": "2026-11-30"
+       },
+       "ob": "autoreteica"
+      },
+      {
+       "periodo": "2026-B6",
+       "accion": "pago",
+       "fechas": {
+        "todos": "2027-01-29"
+       },
+       "ob": "autoreteica"
+      }
+     ]
+    }
+   ],
+   "retencion": null
+  },
+  {
+   "id": "bucaramanga",
+   "nombre": {
+    "es": "Bucaramanga",
+    "en": "Bucaramanga"
+   },
+   "autoridad": {
+    "es": "Secretaría de Hacienda de Bucaramanga",
+    "en": "Bucaramanga Treasury (Secretaría de Hacienda)"
+   },
+   "acto": "Resolución 4-R--202512-00030019 del 5 de diciembre de 2025, modificada por la Resolución 4-R-SdHM-202604-00003143 del 16 de abril de 2026",
+   "url": "https://www.bucaramanga.gov.co/wp-content/uploads/2025/12/4-R-202512-00030019-CALENDARIO-TRIBUTARIO-2026.pdf",
+   "por_nit": true,
+   "regimenes": [
+    {
+     "id": "comun",
+     "nombre": {
+      "es": "Régimen común",
+      "en": "Ordinary regime"
+     },
+     "quien": {
+      "es": "Declarantes anuales de ICA, avisos y tableros y sobretasa bomberil",
+      "en": "Annual filers of ICA, signs-and-boards tax and fire surcharge"
+     },
+     "filas": [
+      {
+       "periodo": "AG2025",
+       "accion": "decl",
+       "fechas": {
+        "1": "2026-03-02",
+        "2": "2026-03-04",
+        "3": "2026-03-06",
+        "4": "2026-03-09",
+        "5": "2026-03-11",
+        "6": "2026-03-13",
+        "7": "2026-03-16",
+        "8": "2026-03-18",
+        "9": "2026-03-20",
+        "0": "2026-03-24"
+       }
+      },
+      {
+       "periodo": "AG2025",
+       "accion": "pago1",
+       "fechas": {
+        "todos": "2026-03-31"
+       }
+      },
+      {
+       "periodo": "AG2025",
+       "accion": "pago2",
+       "fechas": {
+        "todos": "2026-06-30"
+       }
+      },
+      {
+       "periodo": "AG2025",
+       "accion": "pago3",
+       "fechas": {
+        "todos": "2026-09-30"
+       }
+      }
+     ]
+    },
+    {
+     "id": "preferencial",
+     "nombre": {
+      "es": "Régimen preferencial",
+      "en": "Preferential regime"
+     },
+     "quien": {
+      "es": "Contribuyentes del art. 83 del Decreto Municipal 0040 de 2022; no declaran, pagan la cuantía fija",
+      "en": "Taxpayers under art. 83 of Municipal Decree 0040 of 2022; no return, fixed amount"
+     },
+     "filas": [
+      {
+       "periodo": "V2026",
+       "accion": "pago1",
+       "fechas": {
+        "todos": "2026-02-27"
+       }
+      },
+      {
+       "periodo": "V2026",
+       "accion": "pago2",
+       "fechas": {
+        "todos": "2026-06-30"
+       }
+      }
+     ]
+    }
+   ],
+   "retencion": {
+    "nombre": {
+     "es": "ReteICA mensual",
+     "en": "ICA withholding, monthly returns"
+    },
+    "filas": [
+     {
+      "periodo": "2026-01",
+      "accion": "decl_pago",
+      "fechas": {
+       "1-3": "2026-02-16",
+       "4-6": "2026-02-18",
+       "7-0": "2026-02-20"
+      }
+     },
+     {
+      "periodo": "2026-02",
+      "accion": "decl_pago",
+      "fechas": {
+       "1-3": "2026-03-12",
+       "4-6": "2026-03-17",
+       "7-0": "2026-03-19"
+      }
+     },
+     {
+      "periodo": "2026-03",
+      "accion": "decl_pago",
+      "fechas": {
+       "1-3": "2026-04-13",
+       "4-6": "2026-04-15",
+       "7-0": "2026-04-20"
+      }
+     },
+     {
+      "periodo": "2026-04",
+      "accion": "decl_pago",
+      "fechas": {
+       "1-3": "2026-05-15",
+       "4-6": "2026-05-19",
+       "7-0": "2026-05-21"
+      }
+     },
+     {
+      "periodo": "2026-05",
+      "accion": "decl_pago",
+      "fechas": {
+       "1-3": "2026-06-16",
+       "4-6": "2026-06-18",
+       "7-0": "2026-06-22"
+      }
+     },
+     {
+      "periodo": "2026-06",
+      "accion": "decl_pago",
+      "fechas": {
+       "1-3": "2026-07-15",
+       "4-6": "2026-07-17",
+       "7-0": "2026-07-21"
+      }
+     },
+     {
+      "periodo": "2026-07",
+      "accion": "decl_pago",
+      "fechas": {
+       "1-3": "2026-08-14",
+       "4-6": "2026-08-18",
+       "7-0": "2026-08-20"
+      }
+     },
+     {
+      "periodo": "2026-08",
+      "accion": "decl_pago",
+      "fechas": {
+       "1-3": "2026-09-15",
+       "4-6": "2026-09-17",
+       "7-0": "2026-09-21"
+      }
+     },
+     {
+      "periodo": "2026-09",
+      "accion": "decl_pago",
+      "fechas": {
+       "1-3": "2026-10-15",
+       "4-6": "2026-10-19",
+       "7-0": "2026-10-21"
+      }
+     },
+     {
+      "periodo": "2026-10",
+      "accion": "decl_pago",
+      "fechas": {
+       "1-3": "2026-11-13",
+       "4-6": "2026-11-17",
+       "7-0": "2026-11-19"
+      }
+     },
+     {
+      "periodo": "2026-11",
+      "accion": "decl_pago",
+      "fechas": {
+       "1-3": "2026-12-14",
+       "4-6": "2026-12-16",
+       "7-0": "2026-12-18"
+      }
+     },
+     {
+      "periodo": "2026-12",
+      "accion": "decl_pago",
+      "fechas": {
+       "1-3": "2027-01-15",
+       "4-6": "2027-01-18",
+       "7-0": "2027-01-20"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+---
+/** Méthode et sources (page de confiance, RECETTE §8.2). Texte : content/<langue>/_sitio.ts. */
+import PageLayout from '../layouts/PageLayout.astro';
+import { route, type Locale } from '../i18n/routes';
+import { sitioText } from '../lib/guides';
+import { helpers } from '../lib/helpers';
+import { t } from '../i18n/ui';
+import { P } from '../lib/engine/params';
+import { breadcrumbSchema, webPageSchema, faqSchema } from '../lib/seo';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const H = helpers(lang);
+const x = sitioText(lang).method;
+const path = route('method', lang);
+const faqs = x.faqs(H);
+const sources = Object.values(P.sources).map((s) => ({ name: s.label[lang], url: s.url }));
+---
+<PageLayout title={x.title} description={x.description} lang={lang} jsonLd={[webPageSchema({ name: x.h1, description: x.description, path, lang }), breadcrumbSchema([{ name: t(lang).breadcrumbHome, path: route('home', lang) }, { name: x.h1, path }]), faqSchema(faqs, lang)]} faqs={faqs} sources={sources} breadcrumbs={[{ label: x.h1 }]}>
+  <header class="mb-6"><h1 class="text-3xl font-bold text-navy-900 md:text-4xl">{x.h1}</h1></header>
+  <div class="prose prose-slate max-w-none"><Fragment set:html={x.body(H)} /></div>
+</PageLayout>

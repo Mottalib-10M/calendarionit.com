@@ -1,0 +1,16 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { CONTACT_EMAIL, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+import { P } from '../../lib/engine/params';
+const lang = 'es';
+---
+<PageLayout title={`Política editorial – ${SITE_NAMES[lang]}`} description="Cómo comprueba Vencimientos y Nómina CO cada fecha y cada valor: solo normas oficiales, el número del decreto o la resolución, y lo no publicado queda por publicarse." lang={lang} noindex={true} breadcrumbs={[{ label: 'Política editorial' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Política editorial</h1>
+    <h2>Fuentes</h2><p>Solo fuentes primarias: el calendario tributario de la DIAN y el Decreto 2229 de 2023, las resoluciones de la DIAN publicadas en su normograma, las resoluciones de calendario de cada secretaría de hacienda municipal, los decretos del Ministerio del Trabajo y el texto del Código Sustantivo del Trabajo y del Estatuto Tributario en la Secretaría del Senado. Un software contable, un blog o un periódico nunca son fuente. Cada valor está en un fichero de datos con su norma y la fecha en que se leyó ({P.retrieved_at}).</p>
+    <h2>Lo que no publicamos</h2><p>Ninguna fecha que no esté en una norma publicada: el calendario nacional de 2027 y el salario mínimo de 2027 aparecen «por publicarse» hasta que salgan. Si una ciudad no tiene su resolución legible en una fuente oficial, no entra. No recomendamos contadores, software ni productos, no cobramos por mencionar a nadie y no recogemos datos de contacto.</p>
+    <h2>Comprobaciones</h2><p>Cada fecha nacional se verifica con el PDF de la DIAN y se comprueba que cae en día hábil; el motor de cálculo pasa pruebas automáticas en cada publicación. Los valores se revisan cada diciembre y cada vez que se publica una norma que los cambie.</p>
+    <h2>Correcciones</h2><p>Los errores se corrigen en cuanto se confirman. Escriba a <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Más en <a href={route('method', lang)}>método y fuentes</a> y <a href={route('about', lang)}>quiénes somos</a>.</p>
+  </div>
+</PageLayout>

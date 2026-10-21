@@ -1,0 +1,17 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { CONTACT_EMAIL, SITE_NAMES } from '../../data/site-config';
+import { route } from '../../i18n/routes';
+const lang = 'es';
+---
+<PageLayout title={`Contacto – ${SITE_NAMES[lang]}`} description="Contacto de Vencimientos y Nómina CO: señale una fecha que no coincide con la norma, un valor de nómina o un cálculo que no cuadra. Respondemos por correo." lang={lang} noindex={true} breadcrumbs={[{ label: 'Contacto' }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>Contacto</h1>
+    <p>Escriba a <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Leemos todo lo que tenga que ver con las fechas, los valores y los cálculos. No hay teléfono y no lo llamaremos.</p>
+    <h2>Señalar un error</h2>
+    <p>¿Una fecha no coincide con el calendario de la DIAN o con la resolución de su alcaldía, o un valor de nómina cambió? Indique la página, los últimos dígitos del NIT que probó y, si puede, el enlace a la norma oficial. La corrección se aplica en todas las páginas a la vez.</p>
+    <h2>Lo que no podemos hacer</h2>
+    <p>No presentamos declaraciones, no liquidamos nóminas por usted y no damos asesoría individual. Para su caso concreto, consulte a un contador público o a un abogado laboral; las dudas sobre su cuenta tributaria son para la DIAN o la secretaría de hacienda de su ciudad, por sus canales oficiales.</p>
+    <h2>Insertar la calculadora</h2><p>El código está en la <a href={route('widget', lang)}>página para insertar el calendario</a>. Editor y alojamiento: <a href={route('terms', lang)}>aviso legal</a>.</p>
+  </div>
+</PageLayout>

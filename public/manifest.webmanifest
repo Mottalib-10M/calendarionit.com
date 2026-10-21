@@ -1,0 +1,21 @@
+{
+ "name": "Vencimientos y Nómina CO",
+ "short_name": "Vencimientos CO",
+ "description": "Vencimientos DIAN 2026 por último dígito del NIT, calendario ICA por ciudad y calculadoras de liquidación, cesantías, prima y recargos en Colombia.",
+ "start_url": "/es/",
+ "display": "standalone",
+ "background_color": "#ffffff",
+ "theme_color": "#003893",
+ "icons": [
+  {
+   "src": "/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  }
+ ]
+}
