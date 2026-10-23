@@ -3,4 +3,4 @@ Allow: /
 
 Disallow: /*?*
 
-Sitemap: https://co-calendario-nomina.example/sitemap-index.xml
+Sitemap: https://calendarionit.com/sitemap-index.xml

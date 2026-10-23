@@ -1,6 +1,6 @@
 /** Configuration centrale du site (générée par new-site.py). */
-export const SITE_URL = "https://co-calendario-nomina.example";
-export const SITE_NAMES: Record<string, string> = {"es": "Vencimientos y Nómina CO", "en": "Colombia Tax Dates & Payroll"};
+export const SITE_URL = "https://calendarionit.com";
+export const SITE_NAMES: Record<string, string> = {"es": "Calendario NIT", "en": "Calendario NIT"};
 export const LANG_TAGS: Record<string, string> = {"es": "es-CO", "en": "en"};
 export const OG_LOCALES: Record<string, string> = {"es": "es_CO", "en": "en_US"};
 export const LOCALE_TAG = 'es-CO';
@@ -18,7 +18,7 @@ export const AUTHOR_DESC: Record<string, string> = {"es": "Radif Partners arma e
  *  themes reellement traites par le site, pas une liste de mots-cles : un sujet
  *  declare ici sans page qui le couvre est une declaration fausse. */
 export const KNOWS_ABOUT: Record<string, string[]> = {"es": ["Calendario tributario DIAN", "Impuesto de industria y comercio (ICA)", "Retención en la fuente por salarios", "Prestaciones sociales del Código Sustantivo del Trabajo", "Recargos nocturnos, dominicales y festivos"], "en": ["DIAN tax calendar", "Municipal industry and commerce tax (ICA)", "Payroll withholding tax in Colombia", "Colombian statutory employee benefits", "Night, Sunday and holiday pay premiums"]};
-export const CONTACT_EMAIL = "contacto@co-calendario-nomina.example";
+export const CONTACT_EMAIL = "contacto@calendarionit.com";
 export const THEME_COLOR = '#003893';
 export const LOGO_SYMBOL = 'NIT';
 export const BING_VERIFY_CODE = '';
@@ -33,7 +33,7 @@ export const CONSENT_MODE: 'opt-in' | 'notice' | 'none' = 'none';
  *  pages légales régénérées : `python3 scripts/gen-legal-pages.py .`. Vide = pas de GA4. */
 export const GA4_ID = '';
 /** Projet Microsoft Clarity (compte amradif), chargé sans cookie. Vide = aucune mesure. */
-export const CLARITY_ID = '';
+export const CLARITY_ID = 'z260vtjwkq';
 export const INDEXNOW_KEY = '5cbb6848f2f7486774e68af0d127239f';
 
 /* ------------------------------------------------------------------------- *

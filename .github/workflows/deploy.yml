@@ -82,4 +82,4 @@ jobs:
       - name: Ping IndexNow
         if: github.event_name != 'schedule'
         continue-on-error: true
-        run: bash scripts/indexnow.sh https://co-calendario-nomina.example
+        run: bash scripts/indexnow.sh https://calendarionit.com

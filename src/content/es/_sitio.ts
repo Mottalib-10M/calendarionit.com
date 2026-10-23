@@ -3,11 +3,11 @@ import { CONTACT_EMAIL } from '../../data/site-config';
 
 export default defineSitio({
   about: {
-    title: 'Vencimientos y Nómina CO 2026: quién publica esta web',
-    description: 'Quiénes somos: Radif Partners publica Vencimientos y Nómina CO con las fechas oficiales de la DIAN y las alcaldías, sin vender software ni pedir datos.',
+    title: 'Calendario NIT 2026: quién publica esta web y por qué',
+    description: 'Quiénes somos: Radif Partners publica Calendario NIT con las fechas oficiales de la DIAN y las alcaldías, sin vender software ni pedir datos personales.',
     h1: 'Quiénes somos',
     body: (h) => `
-<p>Vencimientos y Nómina CO lo publica Radif Partners, una empresa editora de calculadoras y guías prácticas. La web responde a la pregunta que se hace cada contador, cada empresario y cada persona que declara renta en Colombia: con mi NIT, ¿cuándo vence lo mío? El documento oficial existe, pero es un PDF con decenas de tablas que hay que recorrer a mano, y el impuesto municipal está en otra resolución, en otro portal. Aquí se escriben los dígitos una vez y aparecen todas las fechas en orden.</p>
+<p>Calendario NIT lo publica Radif Partners, una empresa editora de calculadoras y guías prácticas. La web responde a la pregunta que se hace cada contador, cada empresario y cada persona que declara renta en Colombia: con mi NIT, ¿cuándo vence lo mío? El documento oficial existe, pero es un PDF con decenas de tablas que hay que recorrer a mano, y el impuesto municipal está en otra resolución, en otro portal. Aquí se escriben los dígitos una vez y aparecen todas las fechas en orden.</p>
 <h2>Lo que hacemos mejor que la primera página de Google</h2>
 <p>Ordenamos al momento, sin correo ni registro, todas las fechas del año para un NIT: renta, IVA, retención, Régimen Simple, información exógena e ICA de cinco ciudades, con la próxima fecha arriba y un archivo para la agenda. Cada página cita el decreto o la resolución de donde sale cada fecha, con la fecha en que la leímos. Las calculadoras de nómina usan una sola tabla de valores de 2026, la misma en todas las páginas.</p>
 <h2>Financiación e independencia</h2>
