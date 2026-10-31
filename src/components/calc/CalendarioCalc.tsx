@@ -129,7 +129,7 @@ export default function CalendarioCalc({ lang: l, methodHref, tipo = 'pn', iva =
     <div className="mt-6">
       <div className="mb-2 flex flex-wrap items-center gap-2 text-sm">
         <span className="font-medium text-navy-800">{T(l, `Las ${lista.length} fechas de su NIT`, `All ${lista.length} dates for your NIT`)}</span>
-        <span className="relative inline-block"><select id="cal-filtro" aria-label={T(l, 'Filtrar por obligación', 'Filter by obligation')} value={solo} onChange={(e) => setSolo(e.target.value)} className="h-9 appearance-none rounded-lg border border-navy-300 bg-white pl-2 pr-9 text-sm text-navy-900">
+        <span className="relative inline-block max-w-full"><select id="cal-filtro" aria-label={T(l, 'Filtrar por obligación', 'Filter by obligation')} value={solo} onChange={(e) => setSolo(e.target.value)} className="h-9 max-w-full appearance-none truncate rounded-lg border border-navy-300 bg-white pl-2 pr-9 text-base sm:text-sm text-navy-900">
           <option value="">{T(l, 'Todas', 'All')}</option>
           {obligacionesPresentes.map((k) => <option key={k} value={k}>{k === 'renta' ? T(l, 'Renta', 'Income tax') : k === 'ica' ? T(l, 'ICA y ReteICA', 'ICA and ICA withholding') : obligacion(k, l)}</option>)}
         </select><svg className="pointer-events-none absolute right-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-navy-500" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><path d="M5 7.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" /></svg></span>
