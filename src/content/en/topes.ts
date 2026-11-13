@@ -19,8 +19,8 @@ export default defineText({
   card: 'The five peso thresholds and the VAT condition that make an individual file an income tax return in 2026.',
   title: 'Income tax filing thresholds Colombia 2026 in pesos',
   description: 'Income tax filing thresholds in Colombia for 2026: gross assets, income, card spending, purchases and deposits for tax year 2025, in UVT and DIAN pesos.',
-  h1: 'Do you have to file a Colombian tax return in 2026?',
-  intro: 'Enter your 2025 figures and see at once whether you must file the income tax return this year.',
+  h1: 'Income tax filing thresholds in Colombia: do you have to file in 2026?',
+  intro: 'Enter your 2025 figures and see at once whether you are above the filing thresholds and must file the income tax return this year.',
   resume: (h) => {
     const R = h.P.renta;
     return `Whether an individual must file a Colombian income tax return in 2026 depends on tax year 2025 figures measured with the 2025 UVT of ${h.cop(R.uvt_ag)}, set by DIAN Resolution 000193 of 2024. A resident individual must file if any one of these applies: gross assets on December 31, 2025 above ${h.num(R.patrimonio_uvt)} UVT (${h.cop(R.patrimonio_cop)}); gross income equal to or above ${h.num(R.ingresos_uvt)} UVT (${h.cop(R.ingresos_cop)}); credit card spending, total purchases and consumption, or bank deposits and financial investments each above ${h.cop(R.tarjeta_cop)}; or being registered for VAT at the end of 2025. The legal basis is articles 592, 593 and 594-3 of the Tax Code (Estatuto Tributario) and article 1.6.1.13.2.7 of Decree 1625 of 2016, as replaced by Decree 2229 of 2023. The peso amounts are DIAN's, rounded to the nearest thousand under article 868 of the Tax Code. Those who must file do so between August and October 2026, by the last two digits of their NIT.`;
@@ -39,7 +39,7 @@ export default defineText({
     return `
 <h2>Using the checker</h2>
 <p>Enter your 2025 figures in each box and tick VAT if you were registered. The result says whether you must file and which condition applies; one is enough.</p>
-<h2>Thresholds in UVT and pesos</h2>
+<h2>Income tax filing thresholds in UVT and pesos</h2>
 ${h.table(['Tax year 2025 condition', 'UVT', 'Pesos (DIAN)', 'Exact product'], rows, `2025 UVT: ${h.cop(h.P.renta.uvt_ag)}`, ['l', 'r', 'r', 'r'])}
 <h2>Points newcomers miss</h2>
 <ul>

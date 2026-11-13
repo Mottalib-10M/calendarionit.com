@@ -9,7 +9,7 @@ export default defineText({
   title: 'Overtime pay 2026 in Colombia: night, Sunday, holiday',
   description: 'Overtime pay 2026 in Colombia: night work from 19:00, 90 % Sunday and holiday premium since July, 42-hour week, and an hourly calculator for recargos.',
   h1: 'Overtime, night and Sunday premiums (recargos)',
-  intro: 'The labour reform and the shorter working week changed the value of an hour three times in a year.',
+  intro: 'The labour reform and the shorter working week changed the value of an hour, and of overtime pay, three times in a year.',
   resume: (h) => {
     const N = h.P.nomina;
     const w = h.M.jornadaSemanal(TODAY), hm = h.M.horasMes(w), hour = N.smmlv / hm;
@@ -36,7 +36,7 @@ export default defineText({
 <h2>One hour on the minimum wage, before and after each change</h2>
 ${h.table(['Date', 'Week', 'Ordinary hour', 'Night premium', 'Day overtime', 'Night overtime', 'Sunday or holiday'], ['2026-06-15', '2026-07-01', TODAY].map(row), `Minimum wage of ${h.cop(N.smmlv)}. The night column is the premium alone; the others include the hour plus its premium`, ['l', 'r', 'r', 'r', 'r', 'r', 'r'])}
 <p>Between June and October the Sunday hour on the minimum wage went up twice: on July 1, when the premium moved from ${h.pct(N.dominical[0].pct)} to ${h.pct(N.dominical[1].pct)}, and on July 15, when the shorter week raised the ordinary hour. Sundays and the ${h.a('festivos', '2026 public holidays')} are paid the same way.</p>
-<h2>What the calculator assumes</h2>
+<h2>What the overtime pay calculator assumes</h2>
 <ul>
 <li>Hour divisor: weekly hours ÷ 6 × 30. This is a payroll convention, not a legal rule, so adjust it if your employer uses another.</li>
 <li>Sunday and holiday hours are treated as daytime; if some were at night, enter them in the night hours box as well.</li>

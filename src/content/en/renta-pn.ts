@@ -13,7 +13,7 @@ export default defineText({
   title: 'Individual income tax deadlines Colombia 2026 by NIT',
   description: 'Individual income tax deadlines in Colombia for 2026: your filing day from the last two NIT digits, between August 12 and October 26, for tax year 2025.',
   h1: 'Individual income tax deadlines in Colombia, 2026',
-  intro: 'Type the last two digits of your NIT and get the exact day your income tax return (declaración de renta) is due.',
+  intro: 'Type the last two digits of your NIT and get the exact day your individual income tax return (declaración de renta) is due.',
   resume: (h) => {
     const f = filas(h), fechas = f.map((x) => x[1]).sort();
     const ej = h.M.vencimientos({ nit: EJ, tipo: 'pn', iva: 'no', retenedor: false, rst: false, activos: false, patrimonio: false, precios: false, ciudad: '' })[0];
@@ -35,7 +35,7 @@ export default defineText({
     return `
 <h2>Using the date finder</h2>
 <p>Enter the last two digits of your NIT in the box above, without the check digit. The list sorts your deadlines, highlights the next one and exports them as an .ics file for your calendar.</p>
-<h2>Every pair and its day</h2>
+<h2>Every pair and its individual income tax deadline</h2>
 ${h.table(['Month', 'Digit pair (day of the month)'], rows, 'Filing and payment, tax year 2025, individuals (DIAN 2026 calendar)', ['l', 'l'])}
 <p>No deadline falls on a weekend or a holiday. That is why pair 79-80 is due on Friday, ${h.date(h.M.tabla('renta_pn')[0].fechas['79-80'])} and pair 81-82 on Tuesday, ${h.date(h.M.tabla('renta_pn')[0].fechas['81-82'])}, after the Monday holiday of Día de la Raza.</p>
 <h2>Before you file</h2>

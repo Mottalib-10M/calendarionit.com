@@ -41,7 +41,7 @@ ${h.table(['Concepto', 'Renuncia', 'Despido sin justa causa'], [
   [`<strong>Total</strong>`, `<strong>${h.cop(r.total)}</strong>`, `<strong>${h.cop(d.total)}</strong>`],
 ], `Salario de ${h.cop(SAL)}, contrato indefinido del ${h.date(ING)} al ${h.date(RET)}, ${TOMADAS} días de vacaciones disfrutados`, ['l', 'r', 'r'])}
 <p>Como el salario no pasa de ${N.auxilio_tope_smmlv} salarios mínimos (${h.cop(N.auxilio_tope_smmlv * N.smmlv)}), entra el auxilio de transporte: la base de cesantías y prima es ${h.cop(r.base)}, mientras que las vacaciones se pagan sobre el salario sin auxilio, que es la práctica usual porque son descanso remunerado y no prestación. El detalle de cada concepto está en ${h.a('cesantias', 'cesantías')}, ${h.a('prima', 'prima de servicios')} y ${h.a('vacaciones', 'vacaciones')}.</p>
-<h2>Indemnización según el tipo de contrato</h2>
+<h2>Indemnización en la liquidación según el tipo de contrato</h2>
 <ul>
 <li>Indefinido con salario inferior a ${I.umbral_smmlv} salarios mínimos (${h.cop(I.umbral_smmlv * N.smmlv)}): ${I.bajo.primer_anio} días por el primer año y ${I.bajo.adicional} por cada año siguiente, proporcionales por fracción.</li>
 <li>Indefinido con ${I.umbral_smmlv} salarios mínimos o más: ${I.alto.primer_anio} días y ${I.alto.adicional} por cada año adicional.</li>

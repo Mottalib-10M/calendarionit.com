@@ -38,7 +38,7 @@ export default defineText({
     return `
 <h2>Cómo usar la calculadora</h2>
 <p>La herramienta ya está en Medellín: escriba el último dígito de su NIT, elija régimen ordinario o simplificado y marque ReteICA si retiene. El archivo .ics lleva las fechas a su agenda.</p>
-<h2>Declaración anual del año gravable 2025, por último dígito</h2>
+<h2>Declaración anual del ICA de Medellín, año gravable 2025, por último dígito</h2>
 ${h.table(['Último dígito', 'Fecha límite para declarar'], filasDecl, `${c.acto}, art. 1. El calendario empieza por el dígito 0`, ['l', 'l'])}
 <p>El orden es inverso: el NIT terminado en 0 declaró primero y el terminado en 1, último. Después, todos pagan la factura en la misma fecha.</p>
 <h2>Régimen simplificado y ReteICA: seis bimestres</h2>

@@ -13,7 +13,7 @@ export default defineText({
   title: 'Calendario de renta personas naturales 2026 por NIT',
   description: 'Calendario de renta personas naturales 2026: fecha límite según los dos últimos dígitos del NIT, del 12 de agosto al 26 de octubre, año gravable 2025.',
   h1: 'Calendario de renta de personas naturales 2026',
-  intro: 'Escriba los dos últimos dígitos de su NIT y vea el día exacto en que vence su declaración de renta.',
+  intro: 'Escriba los dos últimos dígitos de su NIT y vea en el calendario el día exacto en que vence su declaración de renta de persona natural.',
   resume: (h) => {
     const f = filas(h), fechas = f.map((x) => x[1]).sort();
     const ej = h.M.vencimientos({ nit: EJ, tipo: 'pn', iva: 'no', retenedor: false, rst: false, activos: false, patrimonio: false, precios: false, ciudad: '' })[0];
@@ -38,7 +38,7 @@ export default defineText({
 <h2>Las ${f.length} fechas por pareja de dígitos</h2>
 ${h.table(['Dígitos', 'Vence', 'Dígitos', 'Vence'], rows, 'Día y mes de vencimiento, año gravable 2025 (calendario DIAN 2026)', ['l', 'l', 'l', 'l'])}
 <p>No hay vencimientos en sábados, domingos ni festivos: por eso la pareja 79-80 vence el viernes ${h.date(f[39][1])} y la 81-82 pasa al martes ${h.date(f[40][1])}, después del lunes festivo del Día de la Raza.</p>
-<h2>Antes de declarar</h2>
+<h2>Antes de declarar renta como persona natural</h2>
 <p>Confirme antes si está obligado con los ${h.a('topes', 'topes para declarar renta')}. Lo que su empleador le retuvo en 2025 se descuenta del impuesto (vea ${h.a('retencion', 'retención en la fuente por salarios')}), y la DIAN ya conoce muchos de sus datos por la ${h.a('exogena', 'información exógena')} de bancos y empleadores.</p>
 `;
   },

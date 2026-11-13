@@ -44,7 +44,7 @@ export default defineText({
 <h2>Declaración anual: febrero de 2026 y febrero de 2027</h2>
 ${h.table(['Último dígito', 'Año gravable 2025 (vence en 2026)', 'Año gravable 2026 (vence en 2027)'], filas, 'Resolución DSH 001 de 2024 y Resolución DSH 003 de 2025, según la página oficial del calendario tributario', ['l', 'l', 'l'])}
 <p>El calendario de Barranquilla ya fija la declaración del año gravable 2026, algo que Medellín, Cali y Bucaramanga todavía no han fijado. El dígito 0 abre la ventana y el 1 la cierra.</p>
-<h2>Tres ritmos de retención</h2>
+<h2>Tres ritmos de retención del ICA en Barranquilla</h2>
 <ul>
 <li>Grandes contribuyentes: declaración mensual de retenciones y autorretenciones, por último dígito.</li>
 <li>Régimen común: declaración bimestral de retenciones y autorretenciones, por último dígito.</li>

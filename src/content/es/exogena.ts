@@ -39,7 +39,7 @@ export default defineText({
     const fechas = Object.values(PJ(h)).sort();
     const fes = h.M.festivos(2026).filter((f) => f.fecha > fechas[0] && f.fecha < fechas[fechas.length - 1]).map((f) => h.date(f.fecha));
     return `
-<h2>Cómo ver su plazo</h2>
+<h2>Cómo ver su plazo de información exógena</h2>
 <p>La calculadora ya tiene marcada la exógena para una persona jurídica con NIT 900.123.453: sus dos últimos dígitos, 53, caen en el bloque ${ej[0]}, que vencía el ${h.date(ej[1])}. Si su entidad es gran contribuyente, cámbiela en «Tipo de contribuyente».</p>
 <h2>Personas jurídicas y naturales</h2>
 ${h.table(['Dígitos', 'Vence', 'Dígitos', 'Vence'], filas, 'Exógena del año gravable 2025, dos últimos dígitos del NIT', ['l', 'l', 'l', 'l'])}

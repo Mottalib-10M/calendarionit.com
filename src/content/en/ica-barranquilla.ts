@@ -18,7 +18,7 @@ export default defineText({
   title: 'Barranquilla ICA tax 2026: annual return and withholding',
   description: 'Barranquilla ICA tax 2026: annual return in February by last NIT digit, monthly or two-month withholding returns by regime, and 2027 dates already published.',
   h1: 'Barranquilla ICA tax: 2026 deadlines and February 2027',
-  intro: 'Barranquilla puts the February annual return and the whole year of withholding in a single calendar.',
+  intro: 'Barranquilla puts the February annual ICA tax return and the whole year of withholding in a single calendar.',
   resume: (h) => {
     const { y25, y26, row, large, ordinary, pref } = data(h);
     const oct = row(large, '2026-10'), p5 = row(ordinary, '2026-B5');
@@ -43,7 +43,7 @@ export default defineText({
 <h2>Annual return: February 2026 and February 2027</h2>
 ${h.table(['Last digit', '2025 tax year (due 2026)', '2026 tax year (due 2027)'], rows, 'Resolutions DSH 001 of 2024 and DSH 003 of 2025, as shown on the official tax calendar page', ['l', 'l', 'l'])}
 <p>Barranquilla has already fixed the return for the 2026 tax year, which Medellín, Cali and Bucaramanga have not. Digit 0 opens the window and digit 1 closes it.</p>
-<h2>Three withholding rhythms</h2>
+<h2>Three ICA withholding rhythms in Barranquilla</h2>
 <ul>
 <li>Large taxpayers: monthly return for withholding and self-withholding, by last digit.</li>
 <li>Ordinary regime: two-month return for withholding and self-withholding, by last digit.</li>

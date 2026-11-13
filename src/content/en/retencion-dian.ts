@@ -14,7 +14,7 @@ export default defineText({
   title: 'Withholding tax return dates Colombia 2026, monthly by NIT',
   description: 'Withholding tax return dates in Colombia for 2026: the monthly filing day by last NIT digit, from February 2026 to January 2027, with every holiday adjustment.',
   h1: 'Monthly withholding tax return dates in Colombia, 2026',
-  intro: 'Every withholding agent files twelve returns a year, one per month, on the day its NIT dictates.',
+  intro: 'Every withholding agent files twelve tax returns a year, one per month, on the date its NIT dictates.',
   resume: (h) => {
     const t = h.M.tabla('retencion'), mar = mes(h, '2026-03'), jun = mes(h, '2026-06');
     return `Any company or person registered as a withholding agent (agente de retención) in Colombia files and pays a withholding tax return (retención en la fuente) every month: ${t.length} returns for 2026, each on a day set by the last digit of the NIT, check digit excluded. January withholding is due ${rango(h, t[0].fechas)}, and December withholding ${rango(h, t[t.length - 1].fechas)}. The rules are those of Decree 2229 of 2023 and the dates come from the DIAN 2026 calendar. Two adjustments broke the usual pattern. The civic day of Friday, April 17 (Decree 500 of 2024) left March withholding for digit 4 on ${h.date(mar.fechas['4'])} and pushed digit 5 to ${h.date(mar.fechas['5'])}. The new holiday on Monday, July 13 (Law 2578 of 2026) moved June withholding for digits 3 to 6 to ${rango(h, { a: jun.fechas['3'], b: jun.fechas['6'] })}. Returns for months of 2027 have dates yet to be published.`;
@@ -34,7 +34,7 @@ export default defineText({
     return `
 <h2>Using the tool</h2>
 <p>The withholding agent box is already ticked, with a sample NIT ending in 3. Type your own last digit to list the twelve deadlines with the next one highlighted; tick VAT as well if your company files it.</p>
-<h2>Month by month</h2>
+<h2>Withholding tax return dates, month by month</h2>
 ${h.table(['Month withheld', 'Digit 1', 'Digit 5', 'Digit 0'], rows, 'Monthly withholding return and payment (DIAN 2026 calendar)', ['l', 'l', 'l', 'l'])}
 <p>The ten digits are spread over consecutive business days, so a Monday holiday shows up as a gap. For September withholding, digit 1 is due on Friday, ${h.date(sep.fechas['1'])} and digit 2 on Tuesday, ${h.date(sep.fechas['2'])}, after the October 12 holiday.</p>
 <h2>Shared deadlines</h2>

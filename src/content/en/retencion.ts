@@ -14,7 +14,7 @@ export default defineText({
   title: 'Salary withholding tax Colombia 2026: article 383 table',
   description: 'Salary withholding tax in Colombia for 2026: the article 383 table in UVT and pesos, deductions, the 25 % exempt income and the monthly procedure 1 calculation.',
   h1: 'Salary withholding tax in Colombia, 2026',
-  intro: 'Enter your monthly pay and see the taxable base, what reduces it and the withholding your employer applies.',
+  intro: 'Enter your monthly salary and see the taxable base, what reduces it and the withholding tax your employer applies.',
   resume: (h) => {
     const U = h.P.uvt['2026'], R = h.P.renta, T = R.art383, N = h.P.nomina;
     return `Employers in Colombia withhold income tax from salaries every month (retención en la fuente) using the article 383 table of the Tax Code and the 2026 UVT of ${h.cop(U)}, set by DIAN Resolution 000238 of 2025. Under procedure 1, a taxable base up to ${h.num(T[0].hasta!)} UVT (${h.cop(T[0].hasta! * U)}) carries no withholding; above it, marginal rates run from ${h.pct(T[1].marginal)} to ${h.pct(T[T.length - 1].marginal)}. Before the table applies, the employee's mandatory health (${h.pct(N.salud_empleado)}) and pension (${h.pct(N.pension_empleado)}) contributions are subtracted, plus the pension solidarity fund from ${N.fsp[0].desde} minimum wages. Then come deductions for dependants (${h.pct(R.dependientes_pct)} of income, at most ${R.dependientes_uvt_mes} UVT a month) and private health plans (at most ${R.prepagada_uvt_mes} UVT a month), and the ${h.pct(R.exenta25)} exempt income of article 206, capped at ${h.num(R.exenta25_uvt_anual)} UVT a year. Deductions and exempt income together cannot exceed ${h.pct(R.limite40)} or ${h.num(R.limite40_uvt_anual)} UVT a year (article 336). On a salary of ${h.cop(EJEMPLOS[2])}, monthly withholding is ${h.cop(ret(h, EJEMPLOS[2]).retencion)}.`;
@@ -37,7 +37,7 @@ export default defineText({
 <p>Enter your salary and other employment pay for the month, say whether you have dependants and what you pay for a private health plan. Each step from gross pay to the base is shown, with the month's withholding.</p>
 <h2>The article 383 table in 2026</h2>
 ${h.table(['From (UVT)', 'To (UVT)', 'Marginal rate', 'Plus (UVT)', 'From (pesos)'], tabla, `Withholding = (base in UVT − lower limit) × rate + fixed UVT; UVT ${h.cop(U)}`, ['r', 'r', 'r', 'r', 'r'])}
-<h2>Four sample salaries</h2>
+<h2>Withholding tax on four sample salaries</h2>
 ${h.table(['Monthly salary', 'Taxable base', 'Base in UVT', 'Withholding'], ejemplos, 'No dependants or private health plan, one employer, ordinary salary', ['r', 'r', 'r', 'r'])}
 <p>Withholding is an advance, not an extra cost: it is credited in your annual return if you are ${h.a('topes', 'required to file')}. Your employer files and pays it each month on its ${h.a('retencion-dian', 'withholding calendar')}. For take-home pay, see the ${h.a('salario-minimo', '2026 minimum wage')} page and the ${h.a('liquidacion', 'final settlement')} calculator.</p>
 `;

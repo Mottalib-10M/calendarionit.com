@@ -11,7 +11,7 @@ export default defineHome({
   title: 'Colombia tax calendar 2026 by NIT: DIAN, ICA and payroll',
   description: 'Colombia tax calendar 2026 by last NIT digit: income tax, VAT, withholding and city ICA dates in order, next one first, with a calendar file to import.',
   h1: 'Colombia tax calendar 2026 by NIT',
-  intro: 'Type the last digits of your NIT and see every date of the year, the next one first.',
+  intro: 'Type the last digits of your NIT and see every date of the year in the Colombian tax calendar, the next one first.',
   resume: (h) => {
     const pn = rango(h, 'renta_pn'), pj = rango(h, 'renta_pj'), gc = rango(h, 'renta_gc');
     return `Colombia's 2026 tax calendar, published by the national tax office (DIAN), applies Decree 2229 of 2023, which sets deadlines in business days for 2024 onwards and assigns each date by the last digit of the taxpayer's NIT, or the last two digits for individuals' income tax returns, always leaving out the check digit after the hyphen. Individuals file their return for tax year 2025 between ${h.date(pn[0])} and ${h.date(pn[1])}; companies pay in two instalments between ${h.date(pj[0])} and ${h.date(pj[1])}; large taxpayers in three, between ${h.date(gc[0])} and ${h.date(gc[1])}. VAT, monthly withholding, the Simple Tax Regime and third-party information returns follow the same digit logic. DIAN has already shifted its dates for the civic day of 17 April and the new public holiday on Monday 13 July 2026 (Law 2578 of 2026), while the municipal ICA tax follows each city's own resolution: this page brings five cities together and sorts everything for your NIT.`;
@@ -43,7 +43,7 @@ export default defineHome({
 <h2>Reading your NIT before looking for a date</h2>
 <p>Colombia’s tax ID, the NIT, ends with a check digit after a hyphen, and that digit plays no part in the calendar. For a company with NIT 900.123.453-7, the digit that decides is 3. For individuals filing an income tax return, DIAN uses the last two digits of the ID document: with cédula 1.020.304.056 the pair is 55-56, and the filing deadline for tax year 2025 is ${h.dia(ejPn[0].fecha)}. Whatever your situation, the number to use is the one printed on your RUT, the tax registration document.</p>
 <p>The calculator above does this reading for you. It accepts the NIT with dots, with a hyphen or as a plain number, drops the check digit and finds the matching key in each table. It then merges the obligations you tick, sorts them by date and puts the next one at the top, with the number of days left.</p>
-<h2>The 2026 national calendar at a glance</h2>
+<h2>The 2026 national tax calendar at a glance</h2>
 ${h.table(['Obligation', 'Assigned by', 'First date', 'Last date'], filas, 'DIAN 2026 tax calendar, Decree 2229 of 2023; earliest and latest date across every NIT ending', ['l', 'l', 'l', 'l'])}
 <p>Each row has its full table on its own page: ${h.a('renta-pn', 'individual income tax')}, ${h.a('renta-pj', 'corporate income tax')}, ${h.a('iva', 'VAT')}, ${h.a('retencion-dian', 'withholding tax returns')}, ${h.a('simple', 'the Simple Tax Regime')} and ${h.a('exogena', 'third-party information')}. Dates in January 2027 in the table belong to 2026 periods, such as the sixth VAT period or December withholding, and are already part of the published calendar.</p>
 <h2>A worked example: a company in Bogotá</h2>

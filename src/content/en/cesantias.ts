@@ -36,7 +36,7 @@ export default defineText({
     return `
 <h2>Using the calculator</h2>
 <p>Enter the monthly salary and the first and last day of the period: a calendar year, the time since the start date, or the year so far. The result shows severance and interest apart, because they are paid in different ways.</p>
-<h2>A full year of 2026 at four salaries</h2>
+<h2>A full year of severance pay in 2026 at four salaries</h2>
 ${h.table(['Monthly salary', 'Base', 'Severance', 'Interest'], rows, `Whole of 2026 (${year(h, N.smmlv).dias} days). Transport allowance of ${h.cop(N.auxilio)} in the base up to ${N.auxilio_tope_smmlv} minimum wages`, ['r', 'r', 'r', 'r'])}
 <p>The jump between the second and third rows is the allowance cliff: at exactly ${N.auxilio_tope_smmlv} minimum wages the allowance still counts, one peso more and it no longer does. The calculator assumes the salary stayed the same for the whole period.</p>
 <h2>Key dates for the 2026 cesantías</h2>

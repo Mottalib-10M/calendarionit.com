@@ -15,7 +15,7 @@ export default defineText({
   title: 'Vacaciones 2026: días hábiles, regreso y compensación',
   description: 'Vacaciones 2026 en Colombia: 15 días hábiles por año trabajado (CST art. 186), fecha de regreso según los festivos y valor en dinero al terminar el contrato.',
   h1: 'Vacaciones: días hábiles, fecha de regreso y valor',
-  intro: 'Quince días hábiles no son quince días de calendario: los festivos de 2026 alargan el descanso.',
+  intro: 'Quince días hábiles de vacaciones no son quince días de calendario: los festivos de 2026 alargan el descanso.',
   resume: (h) => {
     const N = h.P.nomina;
     const p = periodo(h, '2026-12-14');

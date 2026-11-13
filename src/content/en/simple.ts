@@ -13,7 +13,7 @@ export default defineText({
   title: 'Simple Tax Regime Colombia 2026: advances and return dates',
   description: 'Simple Tax Regime in Colombia, 2026: dates for the annual return, the annual consolidated VAT return and the six two-month advance payments, by last NIT digit.',
   h1: 'Simple Tax Regime (SIMPLE): 2026 deadlines',
-  intro: 'One annual return, one annual VAT return and six advance payments: the full calendar of a SIMPLE taxpayer.',
+  intro: 'One annual return, one annual VAT return and six advance payments: the full calendar of a taxpayer in the Simple Tax Regime.',
   resume: (h) => {
     const anual = h.M.tabla('rst_anual')[0], iva = h.M.tabla('rst_iva')[0], ant = h.M.tabla('rst_anticipo');
     return `Colombia's Simple Tax Regime (Régimen Simple de Tributación, or SIMPLE) is an optional regime for small businesses and freelancers, and in 2026 it has three kinds of deadline, all keyed to the last digit of the NIT without the check digit. The annual consolidated return for tax year 2025 was due ${rango(h, anual.fechas)}, by digit pairs 1-2, 3-4, 5-6, 7-8 and 9-0. Members registered for VAT filed their annual consolidated VAT return earlier, ${rango(h, iva.fechas)}, with the same pairs. On top of that come ${ant.length} two-month advance payments (anticipos): January-February is due ${rango(h, ant[0].fechas)} and the last one, for November-December, ${rango(h, ant[ant.length - 1].fechas)}. The rules come from Decree 2229 of 2023 and the dates from the DIAN 2026 calendar, including the July shift for the Monday, July 13 holiday (Law 2578 of 2026). The annual return dates for tax year 2026 are yet to be published.`;
@@ -35,7 +35,7 @@ export default defineText({
 <p>SIMPLE with VAT is already ticked. Enter your last NIT digit; if you are not registered for VAT, untick it and the annual VAT return leaves the list.</p>
 <h2>Annual returns for tax year 2025</h2>
 ${h.table(['Last digit', 'Annual consolidated VAT', 'Annual SIMPLE return'], filasAnual, '2026 deadlines by digit pair', ['l', 'l', 'l'])}
-<h2>Two-month advances in 2026</h2>
+<h2>Simple Tax Regime: two-month advances in 2026</h2>
 ${h.table(['Period', 'Digit 1', 'Digit 0'], filasAnt, 'Electronic advance payment slip; digits 2 to 9 fall on the business days in between', ['l', 'l', 'l'])}
 <p>The advances share their days with several ordinary-regime deadlines, such as the two-month ${h.a('iva', 'VAT return')}. A freelancer who leaves SIMPLE goes back to the ${h.a('renta-pn', 'individual income tax calendar')}. In Medellín, being in SIMPLE also rules out the preferential ICA system (Agreement 093 of 2023, art. 62): see ${h.a('ica-medellin', 'ICA in Medellín')}.</p>
 `;

@@ -9,7 +9,7 @@ export default defineText({
   title: 'Recargos y horas extras 2026: nocturno, dominical y festivo',
   description: 'Recargos y horas extras 2026 en Colombia: nocturno desde las 19:00, dominical y festivo al 90 % desde julio, jornada de 42 horas. Calculadora por horas.',
   h1: 'Recargos nocturnos, dominicales y horas extras',
-  intro: 'La reforma laboral y la reducción de jornada cambiaron el valor de la hora tres veces en un año.',
+  intro: 'La reforma laboral y la reducción de jornada cambiaron el valor de la hora, de los recargos y de las horas extras tres veces en un año.',
   resume: (h) => {
     const N = h.P.nomina;
     const j = h.M.jornadaSemanal(HOY), hm = h.M.horasMes(j), hora = N.smmlv / hm;
@@ -36,7 +36,7 @@ export default defineText({
 <h2>Una hora con el salario mínimo, antes y después de cada cambio</h2>
 ${h.table(['Fecha', 'Jornada', 'Hora ordinaria', 'Recargo nocturno', 'Extra diurna', 'Extra nocturna', 'Dominical o festiva'], ['2026-06-15', '2026-07-01', HOY].map(fila), `Salario mínimo de ${h.cop(N.smmlv)}. El recargo nocturno es solo el adicional; las demás columnas incluyen la hora y su recargo`, ['l', 'r', 'r', 'r', 'r', 'r', 'r'])}
 <p>Entre junio y octubre la hora dominical del salario mínimo subió dos veces: el 1 de julio por el paso del ${h.pct(N.dominical[0].pct)} al ${h.pct(N.dominical[1].pct)}, y el 15 de julio porque la hora ordinaria creció al bajar la jornada. Los domingos y los ${h.a('festivos', 'festivos de 2026')} se pagan igual.</p>
-<h2>Supuestos de la calculadora</h2>
+<h2>Supuestos de la calculadora de recargos y horas extras</h2>
 <ul>
 <li>Divisor de horas: jornada semanal ÷ 6 × 30. Es una convención de nómina, no una regla legal; ajústela si su empresa usa otra.</li>
 <li>Las horas en domingo o festivo se toman como diurnas; si fueron nocturnas, súmelas también en la casilla de horas nocturnas.</li>

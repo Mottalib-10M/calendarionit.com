@@ -39,7 +39,7 @@ export default defineText({
     return `
 <h2>Using the calculator</h2>
 <p>The city is set to Bucaramanga. Enter the last digit of your NIT or ID number, pick ordinary or preferential regime, and turn on ReteICA if you withhold: you get the instalments, the return and the twelve monthly withholding dates.</p>
-<h2>Annual return and instalments</h2>
+<h2>Annual ICA return and instalments in Bucaramanga</h2>
 ${h.table(['Last digit', ...DIG], [['Day in March', ...DIG.map((d) => String(Number(ret[d].slice(8))))]], 'Return for the 2025 tax year, March 2026', ['l', ...DIG.map(() => 'r' as const)])}
 <p>Unlike Medellín or Barranquilla, the order runs from 1 to 0, over just over three weeks.</p>
 <h2>Monthly ICA withholding in 2026</h2>

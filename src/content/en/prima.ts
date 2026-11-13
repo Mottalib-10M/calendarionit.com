@@ -10,7 +10,7 @@ export default defineText({
   title: 'Service bonus 2026 in Colombia: prima de servicios',
   description: 'Service bonus 2026 in Colombia: the prima de servicios, 30 days of pay a year in June and December, with the transport allowance in the base. Calculator.',
   h1: 'Service bonus (prima de servicios), June and December',
-  intro: 'Half a month of pay for each full half-year, and a pro rata share for anyone who joined midway.',
+  intro: 'The service bonus is half a month of pay for each full half-year, and a pro rata share for anyone who joined midway.',
   resume: (h) => {
     const N = h.P.nomina;
     const half = h.M.prima(h.M.basePrestaciones(N.smmlv), h.M.dias360(FROM, TO));

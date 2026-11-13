@@ -17,7 +17,7 @@ export default defineText({
   title: 'Medellín ICA tax 2026: due dates by NIT digit and ReteICA',
   description: 'Medellín ICA tax 2026: annual return for 2025 due April 17 to 30 by last NIT digit, payment by June 25, and two-month ICA withholding returns on a shared date.',
   h1: 'Medellín ICA tax calendar for 2026',
-  intro: 'In Medellín you file in April and pay later, against a bill issued by the city.',
+  intro: 'In Medellín you file the ICA return in April and pay later, against a bill issued by the city.',
   resume: (h) => {
     const { ret, pay, wh, simp } = data(h);
     return `Medellín's industry and commerce tax (impuesto de industria y comercio, ICA) for the 2025 tax year was filed in 2026 under Resolution 202550100057 of 2025, issued by the city's revenue office. Businesses in the ordinary regime filed between ${h.date(ret['0'])} for NITs ending in 0 and ${h.date(ret['1'])} for those ending in 1, by the last digit of the NIT or ID number, ignoring the check digit. What sets Medellín apart is that filing and paying are two steps: the city bills returns filed on time in May, and payment is due by ${h.date(pay)}; self-withholders and occasional taxpayers pay when they file. The simplified regime, for individuals with a single establishment and income up to ${simp.quien.en.match(/[\d,]+ UVT/)![0]} (Agreement 093 of 2023), files no return and pays a city-issued bill every two months. ICA withholding (ReteICA) is filed and paid every two months on a date shared by all NITs; the last 2026 period is due ${h.date(wh[wh.length - 1].fechas.todos)}. The resolution offers no early-payment discount on ICA.`;
@@ -38,7 +38,7 @@ export default defineText({
     return `
 <h2>Using the calculator</h2>
 <p>The tool is already set to Medellín. Enter the last digit of your NIT, pick ordinary or simplified regime and tick ReteICA if you withhold; the .ics button puts the dates in your calendar.</p>
-<h2>Annual return for the 2025 tax year, April 2026</h2>
+<h2>Medellín ICA tax: annual return for the 2025 tax year, April 2026</h2>
 ${h.table(['Last digit', 'Filing deadline'], rows, 'Resolution 202550100057 of 2025, art. 1. The calendar starts with digit 0', ['l', 'l'])}
 <p>The order runs backwards: NITs ending in 0 filed first and those ending in 1 last. After that, everyone pays the bill by the same date.</p>
 <h2>Two-month periods: simplified regime and withholding</h2>

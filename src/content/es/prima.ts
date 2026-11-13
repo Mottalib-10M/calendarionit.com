@@ -10,7 +10,7 @@ export default defineText({
   title: 'Prima de servicios 2026: calculadora y fechas de pago',
   description: 'Prima de servicios 2026 en Colombia: 30 días de salario al año en dos pagos, junio y diciembre, con el auxilio de transporte en la base. Calculadora por días.',
   h1: 'Prima de servicios de junio y diciembre',
-  intro: 'Medio mes de salario por semestre completo, y la parte proporcional si entró a mitad de camino.',
+  intro: 'La prima de servicios es medio mes de salario por semestre completo, y la parte proporcional si entró a mitad de camino.',
   resume: (h) => {
     const N = h.P.nomina;
     const base = h.M.basePrestaciones(N.smmlv);

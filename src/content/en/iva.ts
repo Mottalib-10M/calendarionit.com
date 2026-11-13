@@ -14,7 +14,7 @@ export default defineText({
   title: 'VAT return dates Colombia 2026: two-month IVA by NIT',
   description: 'VAT return dates in Colombia for 2026: the six two-month IVA deadlines by last NIT digit, the three four-month ones, and the July shift due to the new holiday.',
   h1: 'Colombian VAT (IVA) return dates for 2026',
-  intro: 'Six two-month periods, one day per NIT digit, including the January 2027 dates already published.',
+  intro: 'Six two-month VAT periods, one return date per NIT digit, including the January 2027 dates already published.',
   resume: (h) => {
     const b = h.M.tabla('iva_bim'), c = h.M.tabla('iva_cuat');
     const lista = b.map((x) => `${periodo(x.periodo, 'en')}: ${rango(h, x.fechas)}`).join('; ');
@@ -32,7 +32,7 @@ export default defineText({
     const b = h.M.tabla('iva_bim'), c = h.M.tabla('iva_cuat');
     const rows = b.map((x) => { const q = c.find((y) => y.fechas['1'] === x.fechas['1']); return [periodo(x.periodo, 'en'), corto(x.fechas['1']), corto(x.fechas['0']), q ? periodo(q.periodo, 'en') : '']; });
     return `
-<h2>Reading your date</h2>
+<h2>Reading your VAT return date</h2>
 <p>The tool opens on two-month VAT with a sample NIT ending in 3. Replace the digit with yours, and switch the VAT selector to four-month if that is your cycle.</p>
 <h2>Two-month and four-month periods</h2>
 ${h.table(['Period', 'Digit 1', 'Digit 0', 'Four-month period, same dates'], rows, 'First and last day of each window; digits 2 to 9 fall on the business days in between', ['l', 'l', 'l', 'l'])}

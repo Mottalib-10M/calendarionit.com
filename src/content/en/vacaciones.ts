@@ -39,7 +39,7 @@ export default defineText({
 <h2>Return date by first day off</h2>
 ${h.table(['First day off', 'Last day off', 'Back at work', 'Calendar days'], rows, `${h.P.nomina.vacaciones_dias_habiles} working days, Monday-to-Friday week, national public holidays`, ['l', 'l', 'l', 'r'])}
 <p>With no holiday in the way, as in September, fifteen working days take ${leave(h, '2026-09-07').span} calendar days. Holy Week, July and December stretch further because the public holidays are added to the break. The full list is on the ${h.a('festivos', '2026 public holidays')} page.</p>
-<h2>Cash for unused days when the job ends</h2>
+<h2>Cash for unused paid holidays when the job ends</h2>
 <p>Under Law 995 of 2005, pending days are paid out at ${h.P.nomina.vacaciones_dias_habiles} days per 360 worked, pro rata, each valued at salary ÷ 30. The amount is part of the ${h.a('liquidacion', 'final settlement')}, alongside the ${h.a('prima', 'service bonus')} and severance.</p>
 <ul>
 <li>Base: the ordinary salary, without the transport allowance.</li>

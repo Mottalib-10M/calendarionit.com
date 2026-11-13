@@ -7,7 +7,7 @@ export default defineText({
   title: 'Minimum wage 2026 in Colombia: amount, net pay, allowance',
   description: 'Minimum wage 2026 in Colombia: COP 1,750,905 plus a COP 249,095 transport allowance, take-home pay after health and pension, and the decree’s court status.',
   h1: 'Colombia’s 2026 minimum wage, allowance and net pay',
-  intro: 'The amount has not changed all year, even though the decree behind it went before the Council of State.',
+  intro: 'The minimum wage amount has not changed all year, even though the decree behind it went before the Council of State.',
   resume: (h) => {
     const N = h.P.nomina, n = h.M.neto(N.smmlv);
     return `Colombia's monthly minimum wage for 2026, the salario mínimo mensual legal vigente, is ${h.cop(N.smmlv)}. It was set by Decree 1469 of 2025, a rise of ${h.pct(N.smmlv / N.smmlv_2025 - 1)} on the ${h.cop(N.smmlv_2025)} of 2025. The transport allowance is ${h.cop(N.auxilio)} (Decree 1470 of 2025) and is owed to employees earning up to ${N.auxilio_tope_smmlv} minimum wages, or ${h.cop(N.auxilio_tope_smmlv * N.smmlv)}. In February 2026 the Council of State (Consejo de Estado) provisionally suspended Decree 1469; the Government then issued Decree 0159 of 2026, setting the same amount on an interim basis, and in July 2026 the court lifted the suspension. The amount never changed, and the final ruling is still pending. A worker on the minimum wage pays ${h.pct(N.salud_empleado)} for health and ${h.pct(N.pension_empleado)} for pension on the salary without the allowance, taking home ${h.cop(n.neto)} a month. The 2027 minimum wage is yet to be published: under Law 278 of 1996, art. 8, the wage commission decides by December 15 and, failing agreement, the Government sets it by December 30.`;

@@ -40,7 +40,7 @@ export default defineText({
     return `
 <h2>Cómo usar la calculadora</h2>
 <p>Bogotá ya viene seleccionada: elija su régimen de ICA (bimestral, anual o preferencial) y marque ReteICA si es agente de retención. Las fechas distritales se suman a las de la DIAN en la misma lista.</p>
-<h2>Fechas de 2026</h2>
+<h2>Fechas del ICA en Bogotá para 2026</h2>
 ${h.table(['Periodo', 'ICA bimestral', 'ReteICA'], rows, 'Declaración y pago, Resolución SDH-000195 de 2025', ['l', 'l', 'l'])}
 <p>El ReteICA vence antes que el ICA del mismo bimestre: el de enero-febrero, por ejemplo, el ${h.date(una(rete[0]))}, frente al ${h.date(una(bim[0]))} del impuesto. El sexto bimestre de 2026 se declara en 2027, con fechas ya fijadas por la misma resolución.</p>
 <p>Si su empresa opera en otras ciudades, cada una tiene su calendario: compare con ${h.a('ica-medellin', 'ICA Medellín')} y ${h.a('ica-cali', 'ICA Cali')}. Las obligaciones nacionales, como la ${h.a('renta-pj', 'renta de sociedades')}, siguen el NIT.</p>

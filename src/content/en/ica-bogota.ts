@@ -40,7 +40,7 @@ export default defineText({
     return `
 <h2>Using the tool</h2>
 <p>Bogotá is preselected: choose your ICA regime (two-month, annual or preferential) and tick ICA withholding if you are an agent. District dates join the DIAN deadlines in one list.</p>
-<h2>2026 dates</h2>
+<h2>Bogotá ICA tax: 2026 dates</h2>
 ${h.table(['Period', 'Two-month ICA', 'ICA withholding'], rows, 'Filing and payment, Resolution SDH-000195 of 2025', ['l', 'l', 'l'])}
 <p>ICA withholding comes due before ICA for the same period: for January-February, ${h.date(una(rete[0]))} against ${h.date(una(bim[0]))} for the tax itself. The sixth 2026 period is filed in 2027, on dates already set by the same resolution.</p>
 <p>A foreign company with offices in several cities deals with one calendar per city: compare ${h.a('ica-medellin', 'Medellín ICA')} and ${h.a('ica-cali', 'Cali ICA')}. National obligations such as ${h.a('renta-pj', 'corporate income tax')} still follow the NIT.</p>

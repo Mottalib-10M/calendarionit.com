@@ -16,8 +16,8 @@ export default defineText({
   card: 'Tax year 2025 third-party information deadlines by NIT digits, with the 2026 amending resolutions.',
   title: 'Exógena information return 2026: deadlines by NIT digits',
   description: 'Exógena information return in Colombia, 2026: tax year 2025 deadlines by NIT digits for companies, individuals and large taxpayers, with the 2026 DIAN changes.',
-  h1: 'Exógena: 2026 reporting deadlines by NIT',
-  intro: 'When third-party information for tax year 2025 had to reach DIAN, including the two amendments of 2026.',
+  h1: 'Exógena information return: 2026 deadlines by NIT',
+  intro: 'When the exógena return of third-party information for tax year 2025 had to reach DIAN, including the two amendments of 2026.',
   resume: (h) => {
     const pj = PJ(h), gc = GC(h), [f2839, f1034] = OTROS(h);
     return `Información exógena is the annual bulk report in which companies, many individuals and other filers tell DIAN about payments, withholdings, balances and other dealings with third parties. For tax year 2025 it was filed in 2026 under DIAN Resolution 000227 of 2025, art. 1.3.9.1.3, which sets the deadlines in business days. Companies and individuals use the last two NIT digits, check digit excluded, in ${Object.keys(pj).length} blocks of five: 01-05 was due on ${h.date(pj['01-05'])} and 96-00 on ${h.date(pj['96-00'])}. Large taxpayers use the last digit and reported ${rango(h, gc)}; Resolution 000012 of 2026, art. 4, moved digits 1, 2 and 3 to May ${Number(gc['1'].slice(8))}, ${Number(gc['2'].slice(8))} and ${Number(gc['3'].slice(8))}. Resolution 000021 of 2026, art. 9, extended formats 2839, 2840, 2823 to 2829, 2833 to 2835 and 2820 to ${h.date(f2839.fecha)}, except format 2820 filed without an electronic signature, due ${h.date(F2820_SIN_FIRMA)}. Format 1034 was due ${h.date(f1034.fecha)}. Tax year 2026 deadlines are yet to be published.`;
@@ -39,7 +39,7 @@ export default defineText({
     return `
 <h2>Finding your deadline</h2>
 <p>The tool opens with exógena ticked for a company with NIT 900.123.453: its last two digits, 53, fall in block ${ej[0]}, due on ${h.date(ej[1])}. For a large taxpayer, change the type of taxpayer.</p>
-<h2>Companies and individuals</h2>
+<h2>Exógena information return: companies and individuals</h2>
 ${h.table(['Digits', 'Due', 'Digits', 'Due'], filas, 'Exógena for tax year 2025, last two NIT digits', ['l', 'l', 'l', 'l'])}
 <h2>Large taxpayers</h2>
 <p>Since the 2026 change, the order no longer follows the digits: ${orden.map(([k, d]) => `${k} (${corto(d)})`).join(', ')}.</p>

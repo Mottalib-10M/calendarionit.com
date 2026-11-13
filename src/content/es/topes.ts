@@ -39,7 +39,7 @@ export default defineText({
     return `
 <h2>Cómo usar la calculadora</h2>
 <p>Escriba sus cifras de 2025 en cada casilla y marque si era responsable de IVA. El resultado dice si debe declarar y qué condición lo obliga; basta una sola.</p>
-<h2>Los topes en UVT y en pesos</h2>
+<h2>Los topes para declarar renta en UVT y en pesos</h2>
 ${h.table(['Condición del año gravable 2025', 'UVT', 'Pesos (DIAN)', 'Cuenta exacta'], rows, `UVT 2025: ${h.cop(h.P.renta.uvt_ag)}`, ['l', 'r', 'r', 'r'])}
 <h2>Errores frecuentes</h2>
 <ul>

@@ -21,7 +21,7 @@ export default defineText({
   title: 'Colombia public holidays 2026: all 19 days and business days',
   description: 'Colombia public holidays in 2026: every official day off with its Monday shift, the new July holiday under Law 2578 of 2026, and a business-day counter.',
   h1: 'Public holidays in Colombia, 2026',
-  intro: 'The full list for the year, including the new July holiday, plus a business-day counter for any deadline.',
+  intro: 'The full list of Colombia’s public holidays for the year, including the new July holiday, plus a business-day counter for any deadline.',
   resume: (h) => {
     const F = h.M.festivos(2026), chq = F.find((f) => f.id === 'chiquinquira')!;
     return `Colombia has ${F.length} public holidays (festivos) in 2026. Under Law 51 of 1983, known as the Ley Emiliani, many religious and civic holidays are observed on the following Monday: Epiphany, Saint Joseph, Saints Peter and Paul, the Assumption, Día de la Raza, All Saints' Day and the Independence of Cartagena, plus Ascension, Corpus Christi and Sacred Heart, which depend on Easter. Easter Sunday fell on ${h.date(h.M.pascua(2026))}. A new holiday joined the list this year: Law 2578 of 2026, art. 6, made July 9 the day of Our Lady of the Rosary of Chiquinquirá, observed on Monday, ${h.date(chq.fecha)}. With these holidays, 2026 has ${habiles(h)} business days from Monday to Friday. Friday, ${h.date(CIVICO)} was a civic day under Decree 500 of 2024: not a public holiday, but DIAN did not count it as a business day for the tax deadlines of Decree 2229 of 2023.`;
@@ -39,7 +39,7 @@ export default defineText({
     return `
 <h2>Using the counter</h2>
 <p>Pick a year to list its holidays. In “Deadline” mode, enter the notice date and a number of business days to see when the period ends; in “Count” mode, enter two dates to get the business days between them.</p>
-<h2>The 2026 holidays</h2>
+<h2>Colombia’s 2026 public holidays</h2>
 ${h.table(['Day off', 'Holiday', 'Original date'], rows, 'National public holidays, 2026 (Law 51 of 1983 and Law 2578 of 2026)', ['l', 'l', 'l'])}
 <h2>Why the list matters</h2>
 <p>If you employ staff, holiday work carries the Sunday and holiday premium of ${h.pct(h.M.recargoDominical('2026-07-01'))} from July 1, 2026 (see ${h.a('recargos', 'pay premiums')}), and ${h.a('vacaciones', 'paid leave')} is counted in business days, so a holiday inside it extends the leave. Tax deadlines such as those in the ${h.a('renta-pn', 'individual income tax calendar')} skip weekends and holidays.</p>

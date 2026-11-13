@@ -11,7 +11,7 @@ export default defineHome({
   title: 'Calendario tributario 2026 por NIT: DIAN, ICA y nómina',
   description: 'Calendario tributario 2026 por último dígito del NIT: renta, IVA, retención e ICA de su ciudad en orden, la próxima fecha primero y exportable a su agenda.',
   h1: 'Calendario tributario 2026 por NIT',
-  intro: 'Escriba los últimos dígitos de su NIT y vea todas sus fechas del año, la próxima primero.',
+  intro: 'Escriba los últimos dígitos de su NIT y vea todas sus fechas del calendario tributario del año, la próxima primero.',
   resume: (h) => {
     const pn = rango(h, 'renta_pn'), pj = rango(h, 'renta_pj'), gc = rango(h, 'renta_gc');
     return `El calendario tributario 2026 de la DIAN aplica el Decreto 2229 de 2023, que fija los plazos en días hábiles para 2024 y los años siguientes, y asigna cada fecha según el último dígito del NIT, o los dos últimos en la renta de personas naturales, siempre sin el dígito de verificación. Las personas naturales declaran renta del año gravable 2025 entre el ${h.date(pn[0])} y el ${h.date(pn[1])}; las personas jurídicas pagan en dos cuotas entre el ${h.date(pj[0])} y el ${h.date(pj[1])}; los grandes contribuyentes, en tres cuotas entre el ${h.date(gc[0])} y el ${h.date(gc[1])}. El IVA bimestral, la retención en la fuente mensual, el Régimen Simple y la información exógena siguen la misma lógica por dígito. La DIAN ya movió sus fechas por el día cívico del 17 de abril y por el nuevo festivo del lunes 13 de julio de 2026 (Ley 2578 de 2026), y el ICA depende de la resolución de cada ciudad: esta página reúne cinco de ellas y lo ordena todo para su NIT.`;

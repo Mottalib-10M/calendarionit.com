@@ -37,7 +37,7 @@ export default defineText({
 <p>Escriba el salario y los demás pagos laborales del mes, indique si tiene dependientes y cuánto paga de medicina prepagada. Verá cada resta hasta la base y la retención del mes.</p>
 <h2>Tabla del artículo 383 en 2026</h2>
 ${h.table(['Desde (UVT)', 'Hasta (UVT)', 'Tarifa marginal', 'Más (UVT)', 'Desde (pesos)'], tabla, `Retención = (base en UVT − límite inferior) × tarifa + UVT fijas; UVT ${h.cop(U)}`, ['r', 'r', 'r', 'r', 'r'])}
-<h2>Cuatro salarios de ejemplo</h2>
+<h2>Retención en la fuente de cuatro salarios de ejemplo</h2>
 ${h.table(['Salario mensual', 'Base sujeta', 'Base en UVT', 'Retención'], ejemplos, 'Sin dependientes ni medicina prepagada, un solo empleador, salario no integral', ['r', 'r', 'r', 'r'])}
 <p>Lo retenido no es un costo adicional: se descuenta en la declaración de renta del año, si está ${h.a('topes', 'obligado a declarar')}. El empleador declara y paga esas sumas cada mes según su ${h.a('retencion-dian', 'calendario de retención')}. Para el salario neto, vea el ${h.a('salario-minimo', 'salario mínimo 2026')} y la ${h.a('liquidacion', 'liquidación laboral')}.</p>
 `;

@@ -41,7 +41,7 @@ ${h.table(['Item', 'Resignation', 'Unfair dismissal'], [
   ['<strong>Total</strong>', `<strong>${h.cop(q.total)}</strong>`, `<strong>${h.cop(d.total)}</strong>`],
 ], `Salary ${h.cop(PAY)}, open-ended contract from ${h.date(START)} to ${h.date(END)}, ${TAKEN} holiday days taken`, ['l', 'r', 'r'])}
 <p>Because ${h.cop(PAY)} is below ${N.auxilio_tope_smmlv} minimum wages (${h.cop(N.auxilio_tope_smmlv * N.smmlv)}), the transport allowance lifts the base for severance and bonus to ${h.cop(q.base)}. Holiday pay uses the plain salary: the usual practice, since holidays are paid rest rather than a benefit. Each item has its own page: ${h.a('cesantias', 'severance')}, ${h.a('prima', 'service bonus')} and ${h.a('vacaciones', 'paid holidays')}.</p>
-<h2>Dismissal pay by contract type</h2>
+<h2>Dismissal pay in the final settlement, by contract type</h2>
 <ul>
 <li>Open-ended, salary under ${I.umbral_smmlv} minimum wages (${h.cop(I.umbral_smmlv * N.smmlv)}): ${I.bajo.primer_anio} days for the first year plus ${I.bajo.adicional} for each further year, pro rata.</li>
 <li>Open-ended, ${I.umbral_smmlv} minimum wages or more: ${I.alto.primer_anio} days, then ${I.alto.adicional} per further year.</li>

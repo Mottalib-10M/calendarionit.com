@@ -44,7 +44,7 @@ export default defineText({
     return `
 <h2>Using the calculator</h2>
 <p>With Cali preselected, choose your annual income band or the two-month large-taxpayer regime and enter the last digit of your NIT; the ReteICA box adds the withholding dates.</p>
-<h2>Annual return for the 2025 tax year, by income</h2>
+<h2>Cali ICA tax: annual return for the 2025 tax year, by income</h2>
 ${h.table(['Digits', high.nombre.en.replace('Annual, ', ''), mid.nombre.en.replace('Annual, ', ''), low.nombre.en.replace('Annual, ', '')], annual, '2026 dates (Resolution 4131.010.21.0607 of 2025, art. 2). In the lowest band each digit has its own day', ['l', 'l', 'l', 'l'])}
 <p>The biggest earners file first. Filing and payment share the same deadline.</p>
 <h2>Two-month periods in 2026: large taxpayers and withholding</h2>

@@ -7,7 +7,7 @@ export default defineText({
   title: 'Salario mínimo 2026 en Colombia: valor, neto y auxilio',
   description: 'Salario mínimo 2026 en Colombia: $1.750.905 y $249.095 de auxilio de transporte, el neto tras salud y pensión y el estado del decreto ante el Consejo de Estado.',
   h1: 'Salario mínimo 2026: valor, auxilio y pago neto',
-  intro: 'El monto no ha cambiado en todo el año, aunque el decreto que lo fijó pasó por el Consejo de Estado.',
+  intro: 'El monto del salario mínimo no ha cambiado en todo el año, aunque el decreto que lo fijó pasó por el Consejo de Estado.',
   resume: (h) => {
     const N = h.P.nomina, n = h.M.neto(N.smmlv);
     return `El salario mínimo mensual legal vigente de 2026 en Colombia es de ${h.cop(N.smmlv)}, fijado por el Decreto 1469 de 2025 con un aumento del ${h.pct(N.smmlv / N.smmlv_2025 - 1)} sobre los ${h.cop(N.smmlv_2025)} de 2025. El auxilio de transporte es de ${h.cop(N.auxilio)} (Decreto 1470 de 2025) y se paga a quien gana hasta ${N.auxilio_tope_smmlv} salarios mínimos, es decir ${h.cop(N.auxilio_tope_smmlv * N.smmlv)}. En febrero de 2026 el Consejo de Estado suspendió provisionalmente el Decreto 1469; el Gobierno expidió entonces el Decreto 0159 de 2026, que fijó transitoriamente el mismo valor, y en julio de 2026 el Consejo de Estado revocó la suspensión. El monto nunca cambió y el fallo de fondo sigue pendiente. Un trabajador con el mínimo aporta ${h.pct(N.salud_empleado)} a salud y ${h.pct(N.pension_empleado)} a pensión sobre el salario sin auxilio, y recibe ${h.cop(n.neto)} netos al mes. El mínimo de 2027 está por publicarse: según la Ley 278 de 1996, art. 8, la Comisión de Concertación decide a más tardar el 15 de diciembre y, sin acuerdo, el Gobierno lo fija antes del 30 de diciembre.`;

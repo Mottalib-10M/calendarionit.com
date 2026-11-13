@@ -39,7 +39,7 @@ export default defineText({
     return `
 <h2>Cómo usar la calculadora</h2>
 <p>La ciudad ya está fijada en Bucaramanga. Indique el último dígito del NIT o de la cédula, elija régimen común o preferencial y active ReteICA si es agente retenedor: verá las cuotas, la declaración y las doce retenciones del año.</p>
-<h2>Declaración anual y cuotas</h2>
+<h2>Declaración anual del ICA de Bucaramanga y cuotas</h2>
 ${h.table(['Último dígito', ...DIG], [['Día de marzo', ...DIG.map((d) => String(Number(decl[d].slice(8))))]], 'Declaración del año gravable 2025, marzo de 2026', ['l', ...DIG.map(() => 'r' as const)])}
 <p>A diferencia de Medellín o Barranquilla, aquí el orden va del 1 al 0, repartido en poco más de tres semanas.</p>
 <h2>ReteICA mensual de 2026</h2>

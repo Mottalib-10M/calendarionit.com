@@ -44,7 +44,7 @@ export default defineText({
     return `
 <h2>Cómo usar la calculadora</h2>
 <p>Con Cali ya elegida, escoja su rango anual o el bimestral de grandes contribuyentes y escriba el último dígito del NIT; la casilla ReteICA añade las fechas de retención.</p>
-<h2>Declaración anual del año gravable 2025, según ingresos</h2>
+<h2>Declaración anual del ICA de Cali, año gravable 2025, según ingresos</h2>
 ${h.table(['Dígitos', alto.nombre.es.replace('Anual, ', ''), medio.nombre.es.replace('Anual, ', ''), bajo.nombre.es.replace('Anual, ', '')], filasAnual, 'Fechas de 2026 (Resolución 4131.010.21.0607 de 2025, art. 2). En el rango bajo cada dígito tiene su propia fecha', ['l', 'l', 'l', 'l'])}
 <p>Quien más factura declara primero; declaración y pago van en la misma fecha.</p>
 <h2>Bimestres de 2026: grandes contribuyentes y ReteICA</h2>
