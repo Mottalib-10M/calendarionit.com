@@ -1,5 +1,5 @@
 {
- "revisado": "2026-11-13",
+ "revisado": "2026-11-14",
  "fuentes": {
   "dian_calendario_2027": {
    "url": "https://www.dian.gov.co/Calendarios/Calendario_Tributario_2027.pdf",
@@ -42,10 +42,9 @@
   },
   "ica_bucaramanga": {
    "url": "https://www.bucaramanga.gov.co/wp-content/uploads/2025/12/4-R-202512-00030019-CALENDARIO-TRIBUTARIO-2026.pdf",
-   "estado": 200,
-   "huella": "1b75a1b24fa2a44f",
-   "bytes": 741949,
-   "desde": "2026-11-01"
+   "estado": "error",
+   "detalle": "fetch failed",
+   "desde": "2026-11-14"
   }
  }
 }
