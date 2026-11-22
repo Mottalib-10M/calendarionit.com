@@ -21,9 +21,9 @@ export const NOMBRE_FESTIVO: Record<FestivoId, [string, string]> = {
   inmaculada: ['Inmaculada Concepción', 'Immaculate Conception'], navidad: ['Navidad', 'Christmas Day'],
 };
 
-export default function FestivosCalc({ lang: l, methodHref }: { lang: L; methodHref?: string }) {
+export default function FestivosCalc({ lang: l, methodHref, anio: a0 }: { lang: L; methodHref?: string; anio?: number }) {
   const [hoy, setHoy] = useState(__BUILD_DAY__);
-  const [anio, setAnio] = useState(Number(__BUILD_DAY__.slice(0, 4)));
+  const [anio, setAnio] = useState(a0 ?? Number(__BUILD_DAY__.slice(0, 4)));
   const [modo, setModo] = useState<'sumar' | 'contar'>('sumar');
   const [desde, setDesde] = useState(__BUILD_DAY__);
   const [hasta, setHasta] = useState(__BUILD_DAY__.slice(0, 4) + '-12-31');
@@ -32,7 +32,7 @@ export default function FestivosCalc({ lang: l, methodHref }: { lang: L; methodH
     const d = new Date().toISOString().slice(0, 10);
     setHoy(d);
     const u = readParams(window.location.search);
-    setAnio(Number(u.get('a') ?? d.slice(0, 4)));
+    setAnio(Number(u.get('a') ?? a0 ?? d.slice(0, 4)));
     setDesde(u.get('d') ?? d);
     if (u.get('h')) setHasta(u.get('h')!);
     if (u.get('n')) setN(Math.max(1, Math.min(365, Number(u.get('n')) || 10)));

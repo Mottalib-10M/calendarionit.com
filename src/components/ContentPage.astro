@@ -47,7 +47,7 @@ const tool = page.tool;
     <Clamp text={resume} lang={lang} id={`clamp-${page.id}`} class="mb-3" />
     <div data-outil>
       {tool === 'calendario' && <CalendarioCalc client:load lang={lang} methodHref={methodHref} {...tp} />}
-      {tool === 'festivos' && <FestivosCalc client:load lang={lang} methodHref={methodHref} />}
+      {tool === 'festivos' && <FestivosCalc client:load lang={lang} methodHref={methodHref} {...tp} />}
       {tool === 'retencion' && <RetencionCalc client:load lang={lang} methodHref={methodHref} />}
       {tool === 'topes' && <TopesCalc client:load lang={lang} methodHref={methodHref} />}
       {tool === 'liquidacion' && <LiquidacionCalc client:load lang={lang} methodHref={methodHref} />}

@@ -15,6 +15,7 @@ export const META: PageMeta[] = [
   { id: 'exogena', group: 'impuestos', order: 6, tool: 'calendario', toolProps: { tipo: 'pj', exogena: true, nit: '900123453', foco: 'exogena' }, related: ['renta-pj', 'renta-pn', 'festivos'], sources: ['exogena227', 'exogena12', 'exogena21', 'exogenaCal'] },
   { id: 'topes', group: 'impuestos', order: 7, tool: 'topes', related: ['renta-pn', 'retencion', 'exogena'], sources: ['rentaPN', 'uvt2025', 'uvt2026', 'dec2229'] },
   { id: 'retencion', group: 'impuestos', order: 8, tool: 'retencion', related: ['retencion-dian', 'salario-minimo', 'topes', 'liquidacion'], sources: ['et383', 'et206', 'et336', 'uvt2026', 'ley100'] },
+  { id: 'calendario-2027', group: 'impuestos', order: 9.5, tool: 'festivos', toolProps: { anio: 2027 }, related: ['festivos', 'recargos', 'renta-pn', 'salario-minimo'], sources: ['ley51', 'ley2578', 'ley2466', 'ley2101', 'dec2229'] },
   { id: 'festivos', group: 'impuestos', order: 9, tool: 'festivos', related: ['recargos', 'renta-pn', 'vacaciones'], sources: ['ley51', 'ley2578', 'dec2229'] },
   // ICA por ciudad
   { id: 'ica-bogota', group: 'ica', order: 10, tool: 'calendario', toolProps: { tipo: 'pj', ciudad: 'bogota', nit: '900123453', foco: 'ica' }, related: ['ica-medellin', 'ica-cali', 'renta-pj'], sources: ['icaBogota', 'icaBogotaCal', 'uvt2025'] },
