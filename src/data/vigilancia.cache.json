@@ -1,5 +1,5 @@
 {
- "revisado": "2026-11-24",
+ "revisado": "2026-11-25",
  "fuentes": {
   "dian_calendario_2027": {
    "url": "https://www.dian.gov.co/Calendarios/Calendario_Tributario_2027.pdf",
@@ -20,8 +20,10 @@
   },
   "ica_bogota": {
    "url": "https://back.haciendabogota.gov.co/sites/default/files/basic/07282026-Calendario-2026-V1-4.pdf",
-   "estado": 403,
-   "desde": "2026-11-20"
+   "estado": 200,
+   "huella": "68a7de1dc76de762",
+   "bytes": 1898467,
+   "desde": "2026-11-25"
   },
   "ica_medellin": {
    "url": "https://www.medellin.gov.co/es/wp-content/uploads/2025/12/RESOLUCION-202550100057-DE-2025-CALENDARIO-TRIBUTARIO-2026.pdf",
@@ -32,8 +34,10 @@
   },
   "ica_cali": {
    "url": "https://www.cali.gov.co/hacienda/publicaciones/50130/calendario-tributario/",
-   "estado": 403,
-   "desde": "2026-11-20"
+   "estado": 200,
+   "huella": "deb5a1ec4ef46ed8",
+   "bytes": 213994,
+   "desde": "2026-11-25"
   },
   "ica_barranquilla": {
    "url": "https://barranquilla.gov.co/hacienda/calendario-tributario",
