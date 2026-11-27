@@ -1,5 +1,5 @@
 {
- "revisado": "2026-11-26",
+ "revisado": "2026-11-27",
  "fuentes": {
   "dian_calendario_2027": {
    "url": "https://www.dian.gov.co/Calendarios/Calendario_Tributario_2027.pdf",
@@ -8,10 +8,9 @@
   },
   "dian_calendario_2026": {
    "url": "https://www.dian.gov.co/Calendarios/Calendario_Tributario_2026.pdf",
-   "estado": 200,
-   "huella": "767d01df9eaf907a",
-   "bytes": 1394316,
-   "desde": "2026-11-20"
+   "estado": "error",
+   "detalle": "The operation was aborted due to timeout",
+   "desde": "2026-11-27"
   },
   "dian_exogena_ag2026": {
    "url": "https://www.dian.gov.co/impuestos/sociedades/ExogenaTributaria/CalendarioExogena/Paginas/vigencia-2026.aspx",
@@ -20,8 +19,10 @@
   },
   "ica_bogota": {
    "url": "https://back.haciendabogota.gov.co/sites/default/files/basic/07282026-Calendario-2026-V1-4.pdf",
-   "estado": 403,
-   "desde": "2026-11-26"
+   "estado": 200,
+   "huella": "68a7de1dc76de762",
+   "bytes": 1898467,
+   "desde": "2026-11-27"
   },
   "ica_medellin": {
    "url": "https://www.medellin.gov.co/es/wp-content/uploads/2025/12/RESOLUCION-202550100057-DE-2025-CALENDARIO-TRIBUTARIO-2026.pdf",
@@ -32,8 +33,10 @@
   },
   "ica_cali": {
    "url": "https://www.cali.gov.co/hacienda/publicaciones/50130/calendario-tributario/",
-   "estado": 403,
-   "desde": "2026-11-26"
+   "estado": 200,
+   "huella": "dbcc31de265992fd",
+   "bytes": 213994,
+   "desde": "2026-11-27"
   },
   "ica_barranquilla": {
    "url": "https://barranquilla.gov.co/hacienda/calendario-tributario",
